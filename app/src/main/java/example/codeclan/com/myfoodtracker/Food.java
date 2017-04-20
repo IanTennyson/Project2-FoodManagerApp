@@ -9,8 +9,60 @@ import java.util.Date;
 
 public class Food {
     private int day;
+    private String journal;
+//    private int calories;
     private String meal;
     private String food;
+
+    public Food (int day, String journal, String meal, String food){
+        this.day = day;
+        this.journal = journal;
+//        this.calories = calories;
+        this.meal = meal;
+        this.food = food;
+    }
+
+    public Integer getDay(){
+        return this.day;
+    }
+
+    public String getJournal(){
+        return this.journal;
+    }
+
+    public String getMeal(){
+        return this.meal;
+    }
+
+    public String getFood(){
+        return this.food;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //    private Date date;
 
 
@@ -24,4 +76,4 @@ public class Food {
 //                = new SimpleDateFormat("yyyy/MM/dd");
 //        return simpleDateFormat.format(date);
 //    }
-}
+

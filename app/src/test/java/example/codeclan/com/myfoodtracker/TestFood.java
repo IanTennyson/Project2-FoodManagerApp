@@ -15,6 +15,47 @@ public class TestFood {
 
     Food food;
 
+    @Before
+    public void before(){
+//        Should the Breakfast, Lunch, Dinner and Snacks be Enums?
+        food = new Food(1, "Good day today, not feeling hungry", "Lunch", "Salad");
+    }
+
+    @Test
+    public void testCanGetDay() {
+    assertEquals((Integer) 1, food.getDay());
+    }
+
+    @Test
+    public void testCanGetJournal() {
+        assertEquals("Good day today, not feeling hungry", food.getJournal());
+    }
+
+    @Test
+    public void testCanGetMeal() {
+        assertEquals("Lunch", food.getMeal());
+    }
+
+    @Test
+    public void testCanGetFood() {
+        assertEquals("Salad", food.getFood());
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //    @Before
 //    public void before(){
