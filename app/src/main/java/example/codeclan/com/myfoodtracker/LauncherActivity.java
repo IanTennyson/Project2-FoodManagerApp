@@ -32,4 +32,7 @@ public class LauncherActivity extends AppCompatActivity {
         intent.putExtra("nameUserEntered", nameUserEntered);
         startActivity(intent);
     }
+
+
+
 }

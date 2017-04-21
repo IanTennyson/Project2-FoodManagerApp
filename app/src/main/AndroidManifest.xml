@@ -16,7 +16,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".NavigationActivity" />
-        <activity android:name=".FoodTrackerActivity"></activity>
+        <activity android:name=".FoodTrackerActivity" />
+        <activity android:name=".EatActivity"></activity>
     </application>
 
 </manifest>

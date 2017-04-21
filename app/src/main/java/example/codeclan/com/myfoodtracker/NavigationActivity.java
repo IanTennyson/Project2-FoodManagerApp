@@ -31,5 +31,11 @@ public class NavigationActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onEatButtonClicked(View view){
+        Log.d(getClass().toString(), "onEatButtonClicked");
+        Intent intent = new Intent(this, EatActivity.class);
+        startActivity(intent);
+    }
+
 
 }
