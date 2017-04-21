@@ -37,8 +37,10 @@ public class EatActivity extends AppCompatActivity {
         Log.d(getClass().toString(), "onEatButtonClicked");
         Intent intent = new Intent(this, NavigationActivity.class);
 
-//        String dayUserEntered = day.getText().toString();
-//        Log.d(getClass().toString(), dayUserEntered);
+        String dayUserEntered = day.getText().toString();
+        int dayEntered = Integer.parseInt(dayUserEntered);
+        Log.d(getClass().toString(), dayUserEntered);
+
 
         String mealUserEntered = meal.getText().toString();
         Log.d(getClass().toString(), mealUserEntered);
@@ -47,9 +49,11 @@ public class EatActivity extends AppCompatActivity {
         Log.d(getClass().toString(), foodUserEntered);
 
 
+
+
         ArrayList<Food> foodlist = SharedPreferencesManager.getFoodList(this);
 
-        foodlist.add(new Food(1, "USER ENTERED JOURNAL", mealUserEntered, foodUserEntered));
+        foodlist.add(new Food(dayEntered, "USER ENTERED JOURNAL", mealUserEntered, foodUserEntered));
 
         SharedPreferencesManager.setFoodList(this, foodlist);
 //        SharedPreferences sharedPref = getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);

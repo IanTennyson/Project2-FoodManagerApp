@@ -34,5 +34,7 @@ public class FoodTrackerActivity extends AppCompatActivity {
     public void getFood(View listItem){
         Food food = (Food) listItem.getTag();
         Log.d("Journal Entry: ", food.getJournal());
+        Intent intent = new Intent(this, DetailedFoodTrackerActivity.class);
+        startActivity(intent);
     }
 }
