@@ -1,5 +1,6 @@
 package example.codeclan.com.myfoodtracker;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -7,7 +8,7 @@ import java.util.Date;
  * Created by user on 20/04/2017.
  */
 
-public class Food {
+public class Food implements Serializable {
     private int day;
     private String journal;
 //    private int calories;

@@ -4,6 +4,7 @@ package example.codeclan.com.myfoodtracker;
  * Created by user on 20/04/2017.
  */
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
@@ -35,7 +36,7 @@ public class FoodList {
         list.add(new Food(6, "Journal entry.", "STRING", "STRING"));
     }
     //    CLONE OF ARRAY LIST!
-    public ArrayList<   Food> getList() {
+    public ArrayList<Food> getList() {
         return new ArrayList<Food>(list);
     }
 

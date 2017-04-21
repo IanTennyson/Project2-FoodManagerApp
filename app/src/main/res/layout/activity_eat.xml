@@ -10,17 +10,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="example.codeclan.com.myfoodtracker.EatActivity">
 
-    <TextView
-        android:text="EAT PAGE"
-        android:textSize="30dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="78dp"
-        android:id="@+id/textView"
-        />
-
     <Button
         android:id="@+id/submit_new_food"
 
@@ -33,16 +22,27 @@
         android:layout_marginBottom="28dp"
         />
 
-    <EditText
-        android:id="@+id/meal"
 
-        android:hint="What meal of the day was this?"
+    <EditText
+        android:id="@+id/day"
+
+        android:hint="What day did you eat?"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView"
+        android:layout_marginTop="49dp"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
         />
+
+    <EditText
+    android:id="@+id/meal"
+
+    android:hint="What meal was it?"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+        android:layout_below="@+id/day"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="36dp" />
 
     <EditText
         android:id="@+id/food"
@@ -50,8 +50,18 @@
         android:hint="What food did you eat?"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/meal"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="54dp" />
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/day"
+        android:layout_alignStart="@+id/day" />
+
+    <EditText
+        android:id="@+id/calories"
+
+        android:hint="How many calories was it?"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/food"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
