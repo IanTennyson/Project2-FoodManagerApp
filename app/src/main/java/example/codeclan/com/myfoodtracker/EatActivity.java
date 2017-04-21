@@ -52,7 +52,6 @@ public class EatActivity extends AppCompatActivity {
 
 
         ArrayList<Food> foodlist = SharedPreferencesManager.getFoodList(this);
-
         foodlist.add(new Food(dayEntered, "USER ENTERED JOURNAL", mealUserEntered, foodUserEntered));
 
         SharedPreferencesManager.setFoodList(this, foodlist);

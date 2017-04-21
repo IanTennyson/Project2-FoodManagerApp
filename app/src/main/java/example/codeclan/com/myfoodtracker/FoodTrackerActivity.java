@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
+import android.content.Context;
 
 import java.util.ArrayList;
 
@@ -16,6 +17,7 @@ public class FoodTrackerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_tracker);
         Intent intent = getIntent();
+
 
         ArrayList<Food> foodlist = SharedPreferencesManager.getFoodList(this);
 
@@ -36,5 +38,6 @@ public class FoodTrackerActivity extends AppCompatActivity {
         Log.d("Journal Entry: ", food.getJournal());
         Intent intent = new Intent(this, DetailedFoodTrackerActivity.class);
         startActivity(intent);
+
     }
 }
