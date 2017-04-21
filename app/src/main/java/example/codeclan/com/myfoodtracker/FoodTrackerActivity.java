@@ -17,13 +17,13 @@ public class FoodTrackerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_food_tracker);
         Intent intent = getIntent();
 
+        ArrayList<Food> foodlist = SharedPreferencesManager.getFoodList(this);
 
 
+//        FoodList foodList = new FoodList();
+//        ArrayList<Food> list = foodList.getList();
 
-        FoodList foodList = new FoodList();
-        ArrayList<Food> list = foodList.getList();
-
-        FoodTrackerAdapter foodTrackerAdapter = new FoodTrackerAdapter(this, list);
+        FoodTrackerAdapter foodTrackerAdapter = new FoodTrackerAdapter(this, foodlist);
 
         ListView listView = (ListView) findViewById(R.id.food_tracker);
         listView.setAdapter(foodTrackerAdapter);

@@ -17,6 +17,7 @@ public class SharedPreferencesManager {
 
     public static void setFoodList(Context context, ArrayList<Food> foodlist) {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+        // SharedPreferences.edit() gets an instance SP.Editor this is the class you use to store values in SP
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
         Gson gson = new Gson();
