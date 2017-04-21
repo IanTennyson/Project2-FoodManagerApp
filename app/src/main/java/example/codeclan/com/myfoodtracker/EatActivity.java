@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -34,6 +35,9 @@ public class EatActivity extends AppCompatActivity {
     }
 
     public void onEatButtonClicked(View view){
+
+        Toast.makeText(EatActivity.this, "Added to Log!", Toast.LENGTH_LONG).show();
+
         Log.d(getClass().toString(), "onEatButtonClicked");
         Intent intent = new Intent(this, NavigationActivity.class);
 
