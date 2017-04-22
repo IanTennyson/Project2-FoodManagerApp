@@ -12,6 +12,8 @@ public class DetailedFoodTrackerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detailed_food_tracker);
         Intent intent = getIntent();
+        Bundle extra = intent.getExtras();
+
 
 
     }
