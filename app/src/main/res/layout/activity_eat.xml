@@ -34,18 +34,6 @@
         android:layout_centerHorizontal="true"
         />
 
-    <Spinner
-        android:id="@+id/meal"
-
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="46dp"
-        android:layout_below="@+id/day"
-        android:layout_centerHorizontal="true">
-
-    </Spinner>
-
 
     <EditText
         android:id="@+id/food"
@@ -69,7 +57,31 @@
         android:layout_centerHorizontal="true"
         />
 
+    <Spinner
+        android:id="@+id/meal"
 
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/food"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp">
+
+    </Spinner>
+
+    <Button
+        android:id="@+id/date_button"
+
+        android:onClick="setDate"
+        android:text="Set Date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/day"
+        android:layout_alignRight="@+id/submit_new_food"
+        android:layout_alignEnd="@+id/submit_new_food"
+        android:layout_marginTop="14dp"
+
+        />
 
 
 </RelativeLayout>

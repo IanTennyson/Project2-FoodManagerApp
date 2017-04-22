@@ -19,10 +19,20 @@ public class NavigationActivity extends AppCompatActivity {
         userName = (TextView) findViewById(R.id.display_user_name);
 
         Intent intent = getIntent();
-        Bundle extra = intent.getExtras();
-        String username = extra.getString("nameUserEntered");
-        userName.setText("Welcome " + username);
+        String from = intent.getStringExtra("source");
+        if ("eat".equals(from)){
+            intent = getIntent();
+        }
+        else {
+            Bundle extra = intent.getExtras();
+            String username = extra.getString("nameUserEntered");
+            userName.setText("Welcome " + username);
+        }
     }
+
+
+
+
 
     public void onDayPlannerButtonClicked(View view){
         Log.d(getClass().toString(), "onDayPlannerButtonClicked");
@@ -35,6 +45,10 @@ public class NavigationActivity extends AppCompatActivity {
         Log.d(getClass().toString(), "onEatButtonClicked");
         Intent intent = new Intent(this, EatActivity.class);
         startActivity(intent);
+    }
+
+    public void getIntent(View view){
+        Intent intent = getIntent();
     }
 
 
