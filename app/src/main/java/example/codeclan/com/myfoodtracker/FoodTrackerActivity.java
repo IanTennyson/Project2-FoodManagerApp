@@ -21,10 +21,6 @@ public class FoodTrackerActivity extends AppCompatActivity {
 
         ArrayList<Food> foodlist = SharedPreferencesManager.getFoodList(this);
 
-
-//        FoodList foodList = new FoodList();
-//        ArrayList<Food> list = foodList.getList();
-
         FoodTrackerAdapter foodTrackerAdapter = new FoodTrackerAdapter(this, foodlist);
 
         ListView listView = (ListView) findViewById(R.id.food_tracker);
@@ -38,7 +34,7 @@ public class FoodTrackerActivity extends AppCompatActivity {
         Food food = (Food) listItem.getTag();
         Log.d("Journal Entry: ", food.getJournal());
         Intent intent = new Intent(this, DetailedFoodTrackerActivity.class);
-        intent.putExtra("all log information", food);
+        intent.putExtra("day", food);
 
         startActivity(intent);
 

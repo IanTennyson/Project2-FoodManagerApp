@@ -12,10 +12,10 @@ public class Food implements Serializable {
     private int day;
     private String journal;
 //    private int calories;
-    private String meal;
+    private MealType meal;
     private String food;
 
-    public Food (int day, String journal, String meal, String food){
+    public Food (int day, String journal, MealType meal, String food){
         this.day = day;
         this.journal = journal;
 //        this.calories = calories;
@@ -31,7 +31,7 @@ public class Food implements Serializable {
         return this.journal;
     }
 
-    public String getMeal(){
+    public MealType getMeal(){
         return this.meal;
     }
 

@@ -7,7 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -22,6 +24,7 @@ public class EatActivity extends AppCompatActivity {
     private EditText food;
     private EditText cal;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +35,9 @@ public class EatActivity extends AppCompatActivity {
         meal = (EditText) findViewById(R.id.meal);
         food = (EditText) findViewById(R.id.food);
         cal = (EditText) findViewById(R.id.calories);
+
+
+
     }
 
     public void onEatButtonClicked(View view){
@@ -47,6 +53,8 @@ public class EatActivity extends AppCompatActivity {
 
 
         String mealUserEntered = meal.getText().toString();
+        MealType mealEntered = MealType.valueOf(mealUserEntered);
+
         Log.d(getClass().toString(), mealUserEntered);
 
         String foodUserEntered = food.getText().toString();
@@ -56,7 +64,7 @@ public class EatActivity extends AppCompatActivity {
 
 
         ArrayList<Food> foodlist = SharedPreferencesManager.getFoodList(this);
-        foodlist.add(new Food(dayEntered, "USER ENTERED JOURNAL", mealUserEntered, foodUserEntered));
+        foodlist.add(new Food(dayEntered, "USER ENTERED JOURNAL", mealEntered, foodUserEntered));
 
         SharedPreferencesManager.setFoodList(this, foodlist);
 //        SharedPreferences sharedPref = getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);

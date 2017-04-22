@@ -11,21 +11,50 @@
     tools:context="example.codeclan.com.myfoodtracker.DetailedFoodTrackerActivity">
 
     <TextView
+        android:id="@+id/day"
 
-        android:text="This is the detailed food page"
-        android:textSize="30dp"
+        android:hint="DAY This should not be visible"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView" />
+        />
 
     <TextView
-        android:id="@+id/food"
+        android:id="@+id/calories"
 
-        android:textSize="30dp"
+        android:hint="CALORIES This should not be visible"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="62dp" />
+        android:layout_marginTop="47dp"
+        android:layout_below="@+id/day"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        />
+
+    <EditText
+        android:id="@+id/journal_entry"
+
+        android:hint="Add a short descripition of your day here!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:layout_below="@+id/calories"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        />
+
+
+
+    <ListView
+        android:id="@+id/meal_tracker"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/journal_entry"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="27dp">
+
+    </ListView>
+
 
 </RelativeLayout>

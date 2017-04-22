@@ -18,7 +18,8 @@
         <activity android:name=".NavigationActivity" />
         <activity android:name=".FoodTrackerActivity" />
         <activity android:name=".EatActivity" />
-        <activity android:name=".DetailedFoodTrackerActivity"></activity>
+        <activity android:name=".DetailedFoodTrackerActivity" />
+        <activity android:name=".DetailedMealTrackerActivity"></activity>
     </application>
 
 </manifest>
