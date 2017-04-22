@@ -34,20 +34,24 @@
         android:layout_centerHorizontal="true"
         />
 
-    <EditText
-    android:id="@+id/meal"
+    <Spinner
+        android:id="@+id/meal"
 
-    android:hint="What meal was it?"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="46dp"
         android:layout_below="@+id/day"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="36dp" />
+        android:layout_centerHorizontal="true">
+
+    </Spinner>
+
 
     <EditText
         android:id="@+id/food"
 
-        android:hint="What food did you eat?"
+        android:inputType="textCapCharacters"
+        android:hint="WHAT DID YOU EAT?"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
@@ -57,13 +61,14 @@
     <EditText
         android:id="@+id/calories"
 
-        android:hint="How many calories was it?"
+        android:hint="HOW MANY CALORIES WAS IT?"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:layout_below="@+id/food"
         android:layout_centerHorizontal="true"
         />
+
 
 
 

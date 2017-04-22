@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -23,7 +24,7 @@ public class EatActivity extends AppCompatActivity {
     private EditText meal;
     private EditText food;
     private EditText cal;
-
+    private Spinner spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,12 +33,12 @@ public class EatActivity extends AppCompatActivity {
         Intent intent = getIntent();
 
         day = (EditText) findViewById(R.id.day);
-        meal = (EditText) findViewById(R.id.meal);
+        Spinner mySpinner = (Spinner) findViewById(R.id.meal);
         food = (EditText) findViewById(R.id.food);
         cal = (EditText) findViewById(R.id.calories);
 
-
-
+        mySpinner.setAdapter(new ArrayAdapter<MealType>(this, android.R.layout.simple_spinner_item, MealType.values()));
+        String text = mySpinner.getSelectedItem().toString();
     }
 
     public void onEatButtonClicked(View view){
@@ -52,10 +53,13 @@ public class EatActivity extends AppCompatActivity {
         Log.d(getClass().toString(), dayUserEntered);
 
 
-        String mealUserEntered = meal.getText().toString();
-        MealType mealEntered = MealType.valueOf(mealUserEntered);
+        Spinner mySpinner=(Spinner) findViewById(R.id.meal);
+        String mealSelected = mySpinner.getSelectedItem().toString();
 
-        Log.d(getClass().toString(), mealUserEntered);
+
+        MealType mealEntered = MealType.valueOf(mealSelected);
+
+
 
         String foodUserEntered = food.getText().toString();
         Log.d(getClass().toString(), foodUserEntered);
