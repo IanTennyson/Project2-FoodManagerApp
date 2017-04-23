@@ -8,6 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#FF8C00"
     tools:context="example.codeclan.com.myfoodtracker.EatActivity">
 
     <Button
@@ -73,6 +74,7 @@
         android:id="@+id/date_button"
 
         android:onClick="setDate"
+
         android:text="Set Date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -82,6 +84,19 @@
         android:layout_marginTop="14dp"
 
         />
+
+    <TextView
+        android:id="@+id/chosen_date"
+
+        android:inputType="textCapCharacters"
+        android:hint="23 APR 2017"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/meal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="13dp"
+        />
+
 
 
 </RelativeLayout>

@@ -10,27 +10,36 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class EatActivity extends FragmentActivity {
 
+    DateFormat formatDateTime = DateFormat.getDateInstance();
+    Calendar date = Calendar.getInstance();
     private EditText day;
-    private EditText meal;
     private EditText food;
     private EditText cal;
     private Spinner spinner;
+    private Button dateButton;
+    private TextView chosenDate;
 
     public void setDate(View view){
         DatePickerDialog datePickerDialog = new DatePickerDialog();
         datePickerDialog.show(getSupportFragmentManager(), "date_picker");
     }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,9 +51,43 @@ public class EatActivity extends FragmentActivity {
         Spinner mySpinner = (Spinner) findViewById(R.id.meal);
         food = (EditText) findViewById(R.id.food);
         cal = (EditText) findViewById(R.id.calories);
+        dateButton = (Button) findViewById(R.id.date_button);
+        chosenDate = (TextView) findViewById(R.id.chosen_date);
+
+
+        dateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updateDate();
+            }
+        });
+
+
+        //METHOD THAT GIVE THE CURRENT DATE
+        updateDateTextView();
+
 
         mySpinner.setAdapter(new ArrayAdapter<MealType>(this, android.R.layout.simple_spinner_item, MealType.values()));
         String text = mySpinner.getSelectedItem().toString();
+    }
+
+
+    private void updateDate(){
+        new android.app.DatePickerDialog(this, d, date.get(Calendar.DAY_OF_MONTH), date.get(Calendar.MONTH), date.get(Calendar.YEAR)).show();
+    }
+    android.app.DatePickerDialog.OnDateSetListener d = new android.app.DatePickerDialog.OnDateSetListener() {
+        @Override
+        public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+            date.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+            date.set(Calendar.MONTH, month);
+            date.set(Calendar.YEAR, year);
+            updateDateTextView();
+        }
+    };
+
+    //RETURNS APR 23 2017
+    public void updateDateTextView(){
+        chosenDate.setText(formatDateTime.format(date.getTime()));
     }
 
     public void onEatButtonClicked(View view){
@@ -55,15 +98,17 @@ public class EatActivity extends FragmentActivity {
         Intent i = new Intent(EatActivity.this, NavigationActivity.class);
         i.putExtra("source", "eat");
 
+        //OLD INT DAY FORMAT TO BE REPLACED WITH DATE
         String dayUserEntered = day.getText().toString();
         int dayEntered = Integer.parseInt(dayUserEntered);
         Log.d(getClass().toString(), dayUserEntered);
 
+        //ENUM MEAL TYPE SPINNER
         Spinner mySpinner=(Spinner) findViewById(R.id.meal);
         String mealSelected = mySpinner.getSelectedItem().toString();
-
         MealType mealEntered = MealType.valueOf(mealSelected);
 
+        //STRING FOOD USER ENTERED
         String foodUserEntered = food.getText().toString();
         Log.d(getClass().toString(), foodUserEntered);
 
