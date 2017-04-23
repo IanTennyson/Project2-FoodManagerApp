@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -38,6 +39,9 @@ public class FoodTrackerAdapter extends ArrayAdapter<Food> {
 
         TextView title = (TextView) listItemView.findViewById(R.id.journal);
         title.setText(currentFood.getJournal());
+
+//        TextView calories = (TextView) listItemView.findViewById(R.id.calories);
+//        calories.setText(currentFood.getCalories());
 
         listItemView.setTag(currentFood);
 

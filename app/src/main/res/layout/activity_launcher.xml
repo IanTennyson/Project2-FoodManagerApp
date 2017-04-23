@@ -18,6 +18,7 @@
         android:id="@+id/user_name"
 
         android:hint="USERNAME"
+        android:gravity="center"
         android:inputType="textCapCharacters"
         android:textColorHint="#ffffff"
         android:layout_width="wrap_content"

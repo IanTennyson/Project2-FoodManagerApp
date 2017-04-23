@@ -18,17 +18,17 @@ public class TestFood {
     @Before
     public void before(){
 //        Should the Breakfast, Lunch, Dinner and Snacks be Enums?
-        food = new Food("string", "Good day today, not feeling hungry", MealType.LUNCH, "Salad");
+        food = new Food("month", "day", "journal", MealType.LUNCH, "Salad", 300);
     }
 
     @Test
     public void testCanGetDay() {
-    assertEquals("28", food.getDay());
+    assertEquals("day", food.getDay());
     }
 
     @Test
     public void testCanGetJournal() {
-        assertEquals("Good day today, not feeling hungry", food.getJournal());
+        assertEquals("journal", food.getJournal());
     }
 
     @Test
@@ -39,6 +39,11 @@ public class TestFood {
     @Test
     public void testCanGetFood() {
         assertEquals("Salad", food.getFood());
+    }
+
+    @Test
+    public void testCanGetCalories(){
+        assertEquals(300, food.getCalories());
     }
 
 

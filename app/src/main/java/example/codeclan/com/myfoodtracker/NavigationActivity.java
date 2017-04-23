@@ -36,7 +36,6 @@ public class NavigationActivity extends AppCompatActivity {
 
     public void onDayPlannerButtonClicked(View view){
         Log.d(getClass().toString(), "onDayPlannerButtonClicked");
-
         Intent intent = new Intent(this, FoodTrackerActivity.class);
         startActivity(intent);
     }

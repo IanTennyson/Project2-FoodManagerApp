@@ -16,16 +16,15 @@ public class Food implements Serializable {
     private String journal;
     private MealType meal;
     private String food;
+    private int calories;
 
-//  private int calories;
-
-    public Food (String month, String day, String journal, MealType meal, String food){
+    public Food (String month, String day, String journal, MealType meal, String food, int calories){
         this.month = month;
         this.day = day;
         this.journal = journal;
         this.meal = meal;
         this.food = food;
-//      this.calories = calories;
+        this.calories = calories;
     }
 
     public String getMonth(){
@@ -46,6 +45,10 @@ public class Food implements Serializable {
 
     public String getFood(){
         return this.food;
+    }
+
+    public int getCalories(){
+        return this.calories;
     }
 
 

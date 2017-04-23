@@ -31,7 +31,7 @@
 
             android:layout_width="100dp"
             android:layout_height="85dp"
-            android:textSize="80dp"
+            android:textSize="70dp"
             android:textAlignment="center"
             android:layout_marginRight="20dp"
             android:textColor="#000000"
@@ -52,6 +52,7 @@
         <TextView
             android:id="@+id/journal"
 
+            android:gravity="center"
             android:hint="CLICK HERE TO ADD A JOURNAL ENTRY"
             android:textSize="25dp"
             android:layout_width="fill_parent"
@@ -59,13 +60,12 @@
             />
 
         <TextView
-            android:id="@+id/calories"
+            android:id="@+id/total_calories"
+            android:hint="DISPLAY TOTAL CALORIES"
+            android:gravity="center"
             android:layout_width="fill_parent"
             android:layout_height="30dp"
             />
-
-
-
 
     </LinearLayout>
 

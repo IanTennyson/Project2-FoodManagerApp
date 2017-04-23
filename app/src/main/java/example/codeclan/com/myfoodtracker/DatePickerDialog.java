@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentActivity;
 
 import java.util.Calendar;
 
+
 /**
  * Created by user on 22/04/2017.
  */
@@ -26,6 +27,7 @@ public class DatePickerDialog extends DialogFragment {
         int day = calendar.get(calendar.DAY_OF_MONTH);
         android.app.DatePickerDialog dialog;
         dialog = new android.app.DatePickerDialog(getActivity(), dateSettings, year, month, day);
+
 
         return dialog;
     }

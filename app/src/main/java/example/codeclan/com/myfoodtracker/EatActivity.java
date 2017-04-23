@@ -31,7 +31,6 @@ public class EatActivity extends FragmentActivity {
     private TextView day;
     private EditText food;
     private EditText cal;
-
     private Button dateButton;
     private TextView chosenDate;
 
@@ -49,7 +48,7 @@ public class EatActivity extends FragmentActivity {
         day = (TextView) findViewById(R.id.day);
         Spinner mySpinner = (Spinner) findViewById(R.id.meal);
         food = (EditText) findViewById(R.id.food);
-        cal = (EditText) findViewById(R.id.calories);
+        cal = (EditText) findViewById(R.id.calories_entered);
         dateButton = (Button) findViewById(R.id.date_button);
         chosenDate = (TextView) findViewById(R.id.chosen_date);
 
@@ -100,13 +99,13 @@ public class EatActivity extends FragmentActivity {
         String userChosenDate = chosenDate.getText().toString();
         String[] longDate = userChosenDate.split(" ");
         String monthUserChose = longDate[0];
-        String dayUserChose = longDate[1];
-
+        String dayUserChoseComma = longDate[1];
+        String dayUserChose = dayUserChoseComma.replaceAll(",", "");
         Log.d(" Date user chose: ", userChosenDate);
 
 
         //ENUM MEAL TYPE SPINNER
-        Spinner mySpinner=(Spinner) findViewById(R.id.meal);
+        Spinner mySpinner = (Spinner) findViewById(R.id.meal);
         String mealSelected = mySpinner.getSelectedItem().toString();
         MealType mealEntered = MealType.valueOf(mealSelected);
 
@@ -114,12 +113,16 @@ public class EatActivity extends FragmentActivity {
         String foodUserEntered = food.getText().toString();
         Log.d(getClass().toString(), foodUserEntered);
 
+        //CALORIES USER ENTERED
+        String caloriesEntered = cal.getText().toString();
+        int caloriesUserEntered = Integer.parseInt(caloriesEntered);
+        Log.d("calories user entered: ", caloriesEntered);
+
 
         ArrayList<Food> foodlist = SharedPreferencesManager.getFoodList(this);
-        foodlist.add(new Food(monthUserChose, dayUserChose, "70% CAKE 30% MAN", mealEntered, foodUserEntered));
+        foodlist.add(new Food(monthUserChose, dayUserChose, "70% CAKE 30% MAN", mealEntered, foodUserEntered, caloriesUserEntered));
 
         SharedPreferencesManager.setFoodList(this, foodlist);
-
 
         startActivity(i);
 
