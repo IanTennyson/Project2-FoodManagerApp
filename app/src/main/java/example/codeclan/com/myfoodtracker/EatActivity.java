@@ -28,7 +28,7 @@ public class EatActivity extends FragmentActivity {
 
     DateFormat formatDateTime = DateFormat.getDateInstance();
     Calendar date = Calendar.getInstance();
-    private EditText day;
+    private TextView day;
     private EditText food;
     private EditText cal;
     private Spinner spinner;
@@ -41,13 +41,15 @@ public class EatActivity extends FragmentActivity {
     }
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eat);
         Intent intent = getIntent();
 
-        day = (EditText) findViewById(R.id.day);
+        day = (TextView) findViewById(R.id.day);
         Spinner mySpinner = (Spinner) findViewById(R.id.meal);
         food = (EditText) findViewById(R.id.food);
         cal = (EditText) findViewById(R.id.calories);
@@ -117,7 +119,7 @@ public class EatActivity extends FragmentActivity {
 
 
         ArrayList<Food> foodlist = SharedPreferencesManager.getFoodList(this);
-        foodlist.add(new Food(userChosenDate, "USER ENTERED JOURNAL", mealEntered, foodUserEntered));
+        foodlist.add(new Food(userChosenDate, "70% CAKE 30% MAN", mealEntered, foodUserEntered));
 
         SharedPreferencesManager.setFoodList(this, foodlist);
 

@@ -25,29 +25,6 @@
 
 
     <EditText
-        android:id="@+id/day"
-
-        android:hint="What day did you eat?"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="49dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        />
-
-
-    <EditText
-        android:id="@+id/food"
-
-        android:inputType="textCapCharacters"
-        android:hint="WHAT DID YOU EAT?"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/day"
-        android:layout_alignStart="@+id/day" />
-
-    <EditText
         android:id="@+id/calories"
 
         android:hint="HOW MANY CALORIES WAS IT?"
@@ -58,17 +35,29 @@
         android:layout_centerHorizontal="true"
         />
 
-    <Spinner
-        android:id="@+id/meal"
+    <TextView
+        android:id="@+id/chosen_date"
 
-
+        android:inputType="textCapCharacters"
+        android:hint="23 APR 2017"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/food"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="24dp">
 
-    </Spinner>
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/date_button"
+        android:layout_alignStart="@+id/date_button"
+        android:layout_marginTop="30dp" />
+
+    <EditText
+        android:id="@+id/food"
+
+        android:inputType="textCapCharacters"
+        android:hint="WHAT DID YOU EAT?"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/date_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="77dp" />
 
     <Button
         android:id="@+id/date_button"
@@ -78,25 +67,24 @@
         android:text="Set Date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/day"
-        android:layout_alignRight="@+id/submit_new_food"
-        android:layout_alignEnd="@+id/submit_new_food"
-        android:layout_marginTop="14dp"
 
-        />
+        android:layout_marginTop="41dp"
+        android:layout_below="@+id/chosen_date"
+        android:layout_alignLeft="@+id/submit_new_food"
+        android:layout_alignStart="@+id/submit_new_food" />
 
-    <TextView
-        android:id="@+id/chosen_date"
+    <Spinner
+        android:id="@+id/meal"
 
-        android:inputType="textCapCharacters"
-        android:hint="23 APR 2017"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/meal"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="13dp"
-        />
 
+        android:layout_below="@+id/date_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp">
+
+    </Spinner>
 
 
 </RelativeLayout>

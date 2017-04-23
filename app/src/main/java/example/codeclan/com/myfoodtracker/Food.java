@@ -1,5 +1,7 @@
 package example.codeclan.com.myfoodtracker;
 
+import android.support.annotation.NonNull;
+
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
