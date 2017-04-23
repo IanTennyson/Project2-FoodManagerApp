@@ -1,6 +1,7 @@
 package example.codeclan.com.myfoodtracker;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,7 @@ public class FoodTrackerAdapter extends ArrayAdapter<Food> {
         super(context, 0, food);
     }
 
+
     @Override
     public View getView(int position, View listItemView, ViewGroup parent){
 
@@ -28,7 +30,7 @@ public class FoodTrackerAdapter extends ArrayAdapter<Food> {
 
         Food currentFood = getItem(position);
 
-        TextView day = (TextView) listItemView.findViewById(R.id.day);
+        TextView day = (TextView) listItemView.findViewById(R.id.chosen_date);
         day.setText(currentFood.getDay().toString());
 
         TextView title = (TextView) listItemView.findViewById(R.id.journal);

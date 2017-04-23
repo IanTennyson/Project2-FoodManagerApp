@@ -59,16 +59,15 @@ public class EatActivity extends FragmentActivity {
             @Override
             public void onClick(View v) {
                 updateDate();
+
             }
         });
 
+        mySpinner.setAdapter(new ArrayAdapter<MealType>(this, android.R.layout.simple_spinner_item, MealType.values()));
+        String text = mySpinner.getSelectedItem().toString();
 
         //METHOD THAT GIVE THE CURRENT DATE
         updateDateTextView();
-
-
-        mySpinner.setAdapter(new ArrayAdapter<MealType>(this, android.R.layout.simple_spinner_item, MealType.values()));
-        String text = mySpinner.getSelectedItem().toString();
     }
 
 
@@ -98,10 +97,14 @@ public class EatActivity extends FragmentActivity {
         Intent i = new Intent(EatActivity.this, NavigationActivity.class);
         i.putExtra("source", "eat");
 
-        //OLD INT DAY FORMAT TO BE REPLACED WITH DATE
-        String dayUserEntered = day.getText().toString();
-        int dayEntered = Integer.parseInt(dayUserEntered);
-        Log.d(getClass().toString(), dayUserEntered);
+        //TURNS THE TEXTVIEW chosenDate INTO A STRING AND INSERTS IT INTO foodlist SPM
+        String userChosenDate = chosenDate.getText().toString();
+        Log.d(" Date user chose: ", userChosenDate);
+
+//        //OLD INT DAY FORMAT TO BE REPLACED WITH DATE
+//        String dayUserEntered = day.getText().toString();
+//        int dayEntered = Integer.parseInt(dayUserEntered);
+//        Log.d(getClass().toString(), dayUserEntered);
 
         //ENUM MEAL TYPE SPINNER
         Spinner mySpinner=(Spinner) findViewById(R.id.meal);
@@ -114,13 +117,11 @@ public class EatActivity extends FragmentActivity {
 
 
         ArrayList<Food> foodlist = SharedPreferencesManager.getFoodList(this);
-        foodlist.add(new Food(dayEntered, "USER ENTERED JOURNAL", mealEntered, foodUserEntered));
+        foodlist.add(new Food(userChosenDate, "USER ENTERED JOURNAL", mealEntered, foodUserEntered));
 
         SharedPreferencesManager.setFoodList(this, foodlist);
 
 
-//        Intent i = new Intent(FirstActivity.this, NextActivtiy.class);
-//        i.putExtra("source", "first");  // source is the string to check where it is coming from
         startActivity(i);
 
 

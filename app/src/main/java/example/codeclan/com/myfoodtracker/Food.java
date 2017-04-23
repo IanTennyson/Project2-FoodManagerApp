@@ -9,13 +9,13 @@ import java.util.Date;
  */
 
 public class Food implements Serializable {
-    private int day;
+    private String day;
     private String journal;
     private MealType meal;
     private String food;
 //  private int calories;
 
-    public Food (int day, String journal, MealType meal, String food){
+    public Food (String day, String journal, MealType meal, String food){
         this.day = day;
         this.journal = journal;
         this.meal = meal;
@@ -23,7 +23,7 @@ public class Food implements Serializable {
 //      this.calories = calories;
     }
 
-    public Integer getDay(){
+    public String getDay(){
         return this.day;
     }
 

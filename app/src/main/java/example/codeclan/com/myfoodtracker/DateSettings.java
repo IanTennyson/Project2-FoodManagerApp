@@ -27,8 +27,5 @@ public class DateSettings implements DatePickerDialog.OnDateSetListener {
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
         Toast.makeText(context, dayOfMonth+"th", Toast.LENGTH_LONG ).show();
-
-
-
     }
 }
