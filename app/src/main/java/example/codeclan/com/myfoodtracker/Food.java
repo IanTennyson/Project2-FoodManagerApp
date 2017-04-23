@@ -11,18 +11,25 @@ import java.util.Date;
  */
 
 public class Food implements Serializable {
+    private String month;
     private String day;
     private String journal;
     private MealType meal;
     private String food;
+
 //  private int calories;
 
-    public Food (String day, String journal, MealType meal, String food){
+    public Food (String month, String day, String journal, MealType meal, String food){
+        this.month = month;
         this.day = day;
         this.journal = journal;
         this.meal = meal;
         this.food = food;
 //      this.calories = calories;
+    }
+
+    public String getMonth(){
+        return this.month;
     }
 
     public String getDay(){
@@ -40,6 +47,7 @@ public class Food implements Serializable {
     public String getFood(){
         return this.food;
     }
+
 
 }
 

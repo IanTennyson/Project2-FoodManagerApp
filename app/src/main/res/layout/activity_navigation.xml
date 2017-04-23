@@ -15,6 +15,7 @@
         android:id="@+id/display_user_name"
 
         android:hint="Guest User"
+        android:fontFamily="Watchworld Demo"
         android:textSize="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -31,7 +31,7 @@ public class EatActivity extends FragmentActivity {
     private TextView day;
     private EditText food;
     private EditText cal;
-    private Spinner spinner;
+
     private Button dateButton;
     private TextView chosenDate;
 
@@ -39,9 +39,6 @@ public class EatActivity extends FragmentActivity {
         DatePickerDialog datePickerDialog = new DatePickerDialog();
         datePickerDialog.show(getSupportFragmentManager(), "date_picker");
     }
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,7 +78,7 @@ public class EatActivity extends FragmentActivity {
         public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
             date.set(Calendar.DAY_OF_MONTH, dayOfMonth);
             date.set(Calendar.MONTH, month);
-            date.set(Calendar.YEAR, year);
+//            date.set(Calendar.YEAR, year);
             updateDateTextView();
         }
     };
@@ -101,12 +98,12 @@ public class EatActivity extends FragmentActivity {
 
         //TURNS THE TEXTVIEW chosenDate INTO A STRING AND INSERTS IT INTO foodlist SPM
         String userChosenDate = chosenDate.getText().toString();
+        String[] longDate = userChosenDate.split(" ");
+        String monthUserChose = longDate[0];
+        String dayUserChose = longDate[1];
+
         Log.d(" Date user chose: ", userChosenDate);
 
-//        //OLD INT DAY FORMAT TO BE REPLACED WITH DATE
-//        String dayUserEntered = day.getText().toString();
-//        int dayEntered = Integer.parseInt(dayUserEntered);
-//        Log.d(getClass().toString(), dayUserEntered);
 
         //ENUM MEAL TYPE SPINNER
         Spinner mySpinner=(Spinner) findViewById(R.id.meal);
@@ -119,7 +116,7 @@ public class EatActivity extends FragmentActivity {
 
 
         ArrayList<Food> foodlist = SharedPreferencesManager.getFoodList(this);
-        foodlist.add(new Food(userChosenDate, "70% CAKE 30% MAN", mealEntered, foodUserEntered));
+        foodlist.add(new Food(monthUserChose, dayUserChose, "70% CAKE 30% MAN", mealEntered, foodUserEntered));
 
         SharedPreferencesManager.setFoodList(this, foodlist);
 
