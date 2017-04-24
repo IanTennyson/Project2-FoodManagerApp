@@ -31,11 +31,11 @@ public class FoodTrackerAdapter extends ArrayAdapter<Food> {
 
         Food currentFood = getItem(position);
 
-        TextView month = (TextView) listItemView.findViewById(R.id.month);
-        month.setText(currentFood.getMonth());
+        TextView month = (TextView) listItemView.findViewById(R.id.date);
+        month.setText(currentFood.getDate());
 
-        TextView day = (TextView) listItemView.findViewById(R.id.day);
-        day.setText(currentFood.getDay());
+//        TextView day = (TextView) listItemView.findViewById(R.id.day);
+//        day.setText(currentFood.getDay());
 
         TextView title = (TextView) listItemView.findViewById(R.id.journal);
         title.setText(currentFood.getJournal());

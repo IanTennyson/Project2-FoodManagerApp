@@ -97,10 +97,12 @@ public class EatActivity extends FragmentActivity {
 
         //TURNS THE TEXTVIEW chosenDate INTO A STRING AND INSERTS IT INTO foodlist SPM
         String userChosenDate = chosenDate.getText().toString();
-        String[] longDate = userChosenDate.split(" ");
-        String monthUserChose = longDate[0];
-        String dayUserChoseComma = longDate[1];
-        String dayUserChose = dayUserChoseComma.replaceAll(",", "");
+
+//      GETS A DATE STRING FROM CAL AND SPLITS IT UP TO ASSIGN IT TO THE MONTH AND DAY TRYING TO REPLACE
+//        String[] longDate = userChosenDate.split(" ");
+//        String monthUserChose = longDate[0];
+//        String dayUserChoseComma = longDate[1];
+//        String dayUserChose = dayUserChoseComma.replaceAll(",", "");
         Log.d(" Date user chose: ", userChosenDate);
 
 
@@ -120,7 +122,7 @@ public class EatActivity extends FragmentActivity {
 
 
         ArrayList<Food> foodlist = SharedPreferencesManager.getFoodList(this);
-        foodlist.add(new Food(monthUserChose, dayUserChose, "70% CAKE 30% MAN", mealEntered, foodUserEntered, caloriesUserEntered));
+        foodlist.add(new Food(userChosenDate, "70% CAKE 30% MAN", mealEntered, foodUserEntered, caloriesUserEntered));
 
         SharedPreferencesManager.setFoodList(this, foodlist);
 

@@ -18,12 +18,12 @@ public class TestFood {
     @Before
     public void before(){
 //        Should the Breakfast, Lunch, Dinner and Snacks be Enums?
-        food = new Food("month", "day", "journal", MealType.LUNCH, "Salad", 300);
+        food = new Food( "day", "journal", MealType.LUNCH, "Salad", 300);
     }
 
     @Test
     public void testCanGetDay() {
-    assertEquals("day", food.getDay());
+    assertEquals("day", food.getDate());
     }
 
     @Test
