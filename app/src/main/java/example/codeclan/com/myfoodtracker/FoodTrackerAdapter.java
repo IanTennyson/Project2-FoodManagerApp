@@ -40,6 +40,7 @@ public class FoodTrackerAdapter extends ArrayAdapter<Food> {
         TextView title = (TextView) listItemView.findViewById(R.id.journal);
         title.setText(currentFood.getJournal());
 
+        //WANT TO DISPLAY TOTAL CALORIES FROM THE DETAILED FOOD PAGE
 //        TextView calories = (TextView) listItemView.findViewById(R.id.calories);
 //        calories.setText(currentFood.getCalories());
 

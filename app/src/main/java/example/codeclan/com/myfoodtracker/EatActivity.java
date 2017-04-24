@@ -70,14 +70,14 @@ public class EatActivity extends FragmentActivity {
 
 
     private void updateDate(){
-        new android.app.DatePickerDialog(this, d, date.get(Calendar.DAY_OF_MONTH), date.get(Calendar.MONTH), date.get(Calendar.YEAR)).show();
+        new android.app.DatePickerDialog(this, d, date.get(Calendar.YEAR), date.get(Calendar.MONTH), date.get(Calendar.DAY_OF_MONTH)).show();
     }
     android.app.DatePickerDialog.OnDateSetListener d = new android.app.DatePickerDialog.OnDateSetListener() {
         @Override
         public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
             date.set(Calendar.DAY_OF_MONTH, dayOfMonth);
             date.set(Calendar.MONTH, month);
-//            date.set(Calendar.YEAR, year);
+            date.set(Calendar.YEAR, year);
             updateDateTextView();
         }
     };

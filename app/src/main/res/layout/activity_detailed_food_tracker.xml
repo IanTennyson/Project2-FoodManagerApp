@@ -12,44 +12,6 @@
     tools:context="example.codeclan.com.myfoodtracker.DetailedFoodTrackerActivity">
 
 
-    <!--<TextView-->
-        <!--android:id="@+id/calories"-->
-
-        <!--android:hint="CALORIES This should not be visible"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginTop="47dp"-->
-        <!--android:layout_below="@+id/day"-->
-        <!--android:layout_alignParentLeft="true"-->
-        <!--android:layout_alignParentStart="true"-->
-        <!--/>-->
-
-
-    <!--<ListView-->
-        <!--android:id="@+id/meal_tracker"-->
-
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginTop="32dp"-->
-        <!--android:layout_below="@+id/journal_entry"-->
-        <!--android:layout_alignParentLeft="true"-->
-        <!--android:layout_alignParentStart="true"-->
-        <!--android:layout_marginLeft="42dp"-->
-        <!--android:layout_marginStart="42dp">-->
-
-    <!--</ListView>-->
-
-
-
-
-        <!--android:layout_alignBottom="@+id/journal_entry"-->
-        <!--android:layout_toLeftOf="@+id/meal_tracker"-->
-        <!--android:layout_toStartOf="@+id/meal_tracker"-->
-        <!--android:layout_marginBottom="25dp">-->
-    <!--</LinearLayout>-->
-
-
-
     <LinearLayout
         android:layout_width="100dp"
         android:layout_height="120dp"
@@ -81,6 +43,9 @@
         />
 
     </LinearLayout>
+
+
+
 
 
 </RelativeLayout>

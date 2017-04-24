@@ -16,30 +16,48 @@ public class DetailedFoodTrackerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detailed_food_tracker);
-        Intent intent = new Intent();
+        Intent intent = getIntent();
+
+        ArrayList<Food> foodlist = SharedPreferencesManager.getFoodList(this);
+        FoodTrackerAdapter foodTrackerAdapter = new FoodTrackerAdapter(this, foodlist);
+
+        TextView month = (TextView) findViewById(R.id.month);
+        TextView day = (TextView) findViewById(R.id.day);
 
 
 
 
 
 
-
-
-////        Launcher
-//        String nameUserEntered = userName.getText().toString();
-//        Intent intent = new Intent(this, NavigationActivity.class);
-//        intent.putExtra("nameUserEntered", nameUserEntered);
-//        startActivity(intent);
 //
-////        Navigation
-//        Intent intent = getIntent();
-//        Bundle extra = intent.getExtras();
-//        String username = extra.getString("nameUserEntered");
-//        userName.setText("Welcome " + username);
-
-
+//        @Override
+//        protected void onCreate(Bundle savedInstanceState) {
+//            super.onCreate(savedInstanceState);
+//            setContentView(R.layout.activity_food_tracker);
+//            Intent intent = getIntent();
+//
+//
+//            ArrayList<Food> foodlist = SharedPreferencesManager.getFoodList(this);
+//
+//            FoodTrackerAdapter foodTrackerAdapter = new FoodTrackerAdapter(this, foodlist);
+//
+//            ListView listView = (ListView) findViewById(R.id.food_tracker);
+//            listView.setAdapter(foodTrackerAdapter);
+//
+//
+//        }
+//
+//    public void getDetailedFood(View listItem){
+//
+//        Food food = (Food) listItem.getTag();
+//        Log.d("Journal Entry: ", food.getJournal());
+//        Intent intent = new Intent(this, DetailedFoodTrackerActivity.class);
+//        intent.putExtra("day", food);
+//
+//        startActivity(intent);
 
     }
-
-
 }
+
+
+
