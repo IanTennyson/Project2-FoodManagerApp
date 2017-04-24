@@ -1,5 +1,6 @@
 package example.codeclan.com.myfoodtracker;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -8,7 +9,7 @@ import java.util.HashMap;
  * Created by user on 24/04/2017.
  */
 
-public class Day {
+public class Day implements Serializable{
 
     private HashMap<MealType, ArrayList<Food>> foodDay;
 

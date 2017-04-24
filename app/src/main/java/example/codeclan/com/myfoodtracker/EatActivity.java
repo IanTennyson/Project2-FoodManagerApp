@@ -95,53 +95,71 @@ public class EatActivity extends FragmentActivity {
         Intent i = new Intent(EatActivity.this, NavigationActivity.class);
         i.putExtra("source", "eat");
 
-        //TURNS THE TEXTVIEW chosenDate INTO A STRING AND INSERTS IT INTO foodlist SPM
-        String userChosenDate = chosenDate.getText().toString();
 
-//      GETS A DATE STRING FROM CAL AND SPLITS IT UP TO ASSIGN IT TO THE MONTH AND DAY TRYING TO REPLACE
-//        String[] longDate = userChosenDate.split(" ");
-//        String monthUserChose = longDate[0];
-//        String dayUserChoseComma = longDate[1];
-//        String dayUserChose = dayUserChoseComma.replaceAll(",", "");
+
+//      FOODPLAN CLASS INFORMATION!
+
+        String userChosenDate = chosenDate.getText().toString();
         Log.d(" Date user chose: ", userChosenDate);
 
+        //FOODPLAN CLASS SHARED PREFERENCE MANAGER
+//        ArrayList<FoodPlan> foodPlanList = SharedPreferencesManager.getFoodPlanList(this);
+//        foodPlanList.add(new FoodPlan(userChosenDate));
+//        SharedPreferencesManager.setFoodPlanList(this, foodPlanList);
+
+
+//      DAY CLASS INFORMATION!
 
         //ENUM MEAL TYPE SPINNER
         Spinner mySpinner = (Spinner) findViewById(R.id.meal);
         String mealSelected = mySpinner.getSelectedItem().toString();
         MealType mealEntered = MealType.valueOf(mealSelected);
 
+        //DAY CLASS SHARED PREFERENCE MANAGER
+//        ArrayList<Day> dayList = SharedPreferencesManager.getDayList(this);
+//        dayList.add(new Day(mealEntered));
+//        SharedPreferencesManager.setDayList(this, dayList);
+//
+
+//      FOOD CLASS INFORMATION!
+
         //STRING FOOD USER ENTERED
         String foodUserEntered = food.getText().toString();
         Log.d(getClass().toString(), foodUserEntered);
 
-        //CALORIES USER ENTERED
+        //INT CALORIES USER ENTERED
         String caloriesEntered = cal.getText().toString();
         int caloriesUserEntered = Integer.parseInt(caloriesEntered);
         Log.d("calories user entered: ", caloriesEntered);
 
+        //SHARED PREFERENCE MANAGER
+        //ArrayList<FoodPlan> foodList = SharedPreferencesManager.getFoodPlan(this);
 
-        ArrayList<Food> foodlist = SharedPreferencesManager.getFoodList(this);
-        foodlist.add(new Food(userChosenDate, "70% CAKE 30% MAN", mealEntered, foodUserEntered, caloriesUserEntered));
+        FoodPlan foodPlan = SharedPreferencesManager.getFoodPlan(this);
+        Day day = new Day();
 
-        SharedPreferencesManager.setFoodList(this, foodlist);
+        day.addFoodToDay(mealEntered, new Food(foodUserEntered, caloriesUserEntered));
+        foodPlan.addMealDay(userChosenDate, day);
+        SharedPreferencesManager.setFoodPlan(this, foodPlan);
 
+
+        FoodPlan existingFoodPlan = SharedPreferencesManager.getFoodPlan(this);
+        Day existingDay = existingFoodPlan.getFoodDate(userChosenDate);
+
+        if(existingDay == null) {
+            existingDay = new Day();
+        }
+
+        existingDay.addFoodToDay(mealEntered, new Food(foodUserEntered, caloriesUserEntered));
+
+        SharedPreferencesManager.setFoodPlan(this, foodPlan);
+
+//             foodList.add(new FoodPlan(userChosenDate, mealEntered, foodUserEntered, caloriesUserEntered));
+
+
+//        END
         startActivity(i);
 
-
-
-
-
-
-//        SharedPreferences sharedPref = getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
-//        String favouriteMovies = sharedPref.getString("MyFavourites", new ArrayList<Movie>().toString());
-//        Log.d("Favourites String", favouriteMovies);
-
-      /*  FoodList foodList = new FoodList();
-        ArrayList list = foodList.getList();
-        list.add(new Food(1, "USER ENTERED JOURNAL", mealUserEntered, foodUserEntered));
-
-        startActivity(intent);*/
     }
 
 }

@@ -19,9 +19,15 @@ public class FoodTrackerActivity extends AppCompatActivity {
         Intent intent = getIntent();
 
 
-        ArrayList<Food> foodlist = SharedPreferencesManager.getFoodList(this);
+//        ArrayList<Food> foodlist = SharedPreferencesManager.getFoodList(this);
+//
+//        FoodTrackerAdapter foodTrackerAdapter = new FoodTrackerAdapter(this, foodlist);
+//
+//        ListView listView = (ListView) findViewById(R.id.food_tracker);
+//        listView.setAdapter(foodTrackerAdapter);
 
-        FoodTrackerAdapter foodTrackerAdapter = new FoodTrackerAdapter(this, foodlist);
+        FoodPlan foodPlan = new SharedPreferencesManager().getFoodPlan(this);
+        FoodTrackerAdapter foodTrackerAdapter = new FoodTrackerAdapter(this, foodPlan);
 
         ListView listView = (ListView) findViewById(R.id.food_tracker);
         listView.setAdapter(foodTrackerAdapter);
@@ -31,10 +37,13 @@ public class FoodTrackerActivity extends AppCompatActivity {
 
     public void getDetailedFood(View listItem){
 
-        Food food = (Food) listItem.getTag();
-        Log.d("Journal Entry: ", food.getJournal());
+//        Food food = (Food) listItem.getTag();
+//        Intent intent = new Intent(this, DetailedFoodTrackerActivity.class);
+//        intent.putExtra("day", food);
+
+        FoodPlan foodPlan = (FoodPlan) listItem.getTag();
         Intent intent = new Intent(this, DetailedFoodTrackerActivity.class);
-        intent.putExtra("day", food);
+        intent.putExtra("day", foodPlan);
 
         startActivity(intent);
 

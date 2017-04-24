@@ -18,8 +18,8 @@ public class DetailedFoodTrackerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detailed_food_tracker);
         Intent intent = getIntent();
 
-        ArrayList<Food> foodlist = SharedPreferencesManager.getFoodList(this);
-        FoodTrackerAdapter foodTrackerAdapter = new FoodTrackerAdapter(this, foodlist);
+//        ArrayList<Food> foodlist = SharedPreferencesManager.getFoodList(this);
+//        FoodTrackerAdapter foodTrackerAdapter = new FoodTrackerAdapter(this, foodlist);
 
         TextView month = (TextView) findViewById(R.id.month);
         TextView day = (TextView) findViewById(R.id.day);

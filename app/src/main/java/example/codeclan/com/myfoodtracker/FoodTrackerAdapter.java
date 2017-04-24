@@ -15,30 +15,35 @@ import java.util.ArrayList;
  * Created by user on 20/04/2017.
  */
 
-public class FoodTrackerAdapter extends ArrayAdapter<Food> {
+public class FoodTrackerAdapter extends ArrayAdapter<FoodPlan> {
 
-    public FoodTrackerAdapter(Context context, ArrayList<Food> food){
-        super(context, 0, food);
+    public FoodTrackerAdapter(Context context, ArrayList<FoodPlan> foodPlan){
+        super(context, 0, foodPlan);
     }
 
 
     @Override
+
+
     public View getView(int position, View listItemView, ViewGroup parent){
 
         if (listItemView == null){
             listItemView = LayoutInflater.from(getContext()).inflate(R.layout.food_items, parent, false);
         }
 
-        Food currentFood = getItem(position);
+        FoodPlan currentFood = getItem(position);
 
-        TextView month = (TextView) listItemView.findViewById(R.id.date);
-        month.setText(currentFood.getDate());
+        TextView date = (TextView) listItemView.findViewById(R.id.date);
+        date.setText(currentFood.getFoodDate().toString());
+
+//        TextView month = (TextView) listItemView.findViewById(R.id.date);
+//        month.setText(currentFood.getDate());
 
 //        TextView day = (TextView) listItemView.findViewById(R.id.day);
 //        day.setText(currentFood.getDay());
 
-        TextView title = (TextView) listItemView.findViewById(R.id.journal);
-        title.setText(currentFood.getJournal());
+//        TextView title = (TextView) listItemView.findViewById(R.id.journal);
+//        title.setText(currentFood.getJournal());
 
         //WANT TO DISPLAY TOTAL CALORIES FROM THE DETAILED FOOD PAGE
 //        TextView calories = (TextView) listItemView.findViewById(R.id.calories);
