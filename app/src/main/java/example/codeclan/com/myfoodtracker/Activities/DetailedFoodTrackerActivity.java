@@ -33,11 +33,8 @@ public class DetailedFoodTrackerActivity extends AppCompatActivity {
 
         FoodPlan plan = SharedPreferencesManager.getFoodPlan(this);
 
-        Day day = plan.getFoodOnDate(date);
-        String detailedDate = day.getClass().toString();
-
         TextView textView = (TextView) findViewById(R.id.date);
-        textView.setText(detailedDate);
+        textView.setText(date);
 
     }
 }
