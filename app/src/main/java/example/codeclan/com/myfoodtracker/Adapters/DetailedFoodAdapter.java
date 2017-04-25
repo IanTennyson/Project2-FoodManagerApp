@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import example.codeclan.com.myfoodtracker.Enums.MealType;
+import example.codeclan.com.myfoodtracker.MyClasses.Food;
 import example.codeclan.com.myfoodtracker.R;
 
 /**
@@ -17,8 +19,12 @@ import example.codeclan.com.myfoodtracker.R;
 
 public class DetailedFoodAdapter extends ArrayAdapter{
 
-    public DetailedFoodAdapter(Context context, ArrayList<String> foodPlan){
-        super(context, 0, foodPlan);
+    public DetailedFoodAdapter(Context context, MealType[] mealTypes){
+        super(context, 0, mealTypes);
+    }
+
+    public DetailedFoodAdapter(Context context, Food food){
+        super(context, 0, food);
     }
 
     @Override
@@ -30,16 +36,19 @@ public class DetailedFoodAdapter extends ArrayAdapter{
             listItemView = LayoutInflater.from(getContext()).inflate(R.layout.activity_detailed_meal_tracker, parent, false);
         }
 
-        String currentFood = getItem(position);
+        String meal = getItem(position).toString();
 
-        TextView food = (TextView) listItemView.findViewById(R.id.food);
-        food.setText(currentFood);
+        TextView mealImage = (TextView) listItemView.findViewById(R.id.meal_image);
+        mealImage.setText(meal);
+
+        TextView foodInfo = (TextView) listItemView.findViewById(R.id.food);
+        foodInfo.setText();
 
 //        TextView date = (TextView) listItemView.findViewById(R.id.date);
 //        date.setText(currentDate);
 
 
-        listItemView.setTag(currentFood);
+        listItemView.setTag(meal);
 
         return listItemView;
 
