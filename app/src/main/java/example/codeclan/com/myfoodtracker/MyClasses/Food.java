@@ -4,6 +4,7 @@ import android.support.annotation.NonNull;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -35,6 +36,9 @@ public class Food implements Serializable {
     public int getCalories(){
         return this.calories;
     }
+
+
+
 
 //    public String getDate(){
 //        return this.date;

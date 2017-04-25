@@ -22,7 +22,6 @@ public class FoodTrackerAdapter extends ArrayAdapter<String> {
         super(context, 0, foodPlan);
     }
 
-
     @Override
 
 

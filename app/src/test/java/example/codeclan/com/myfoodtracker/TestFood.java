@@ -3,7 +3,10 @@ package example.codeclan.com.myfoodtracker;
 import org.junit.Before;
 import org.junit.Test;
 
+import example.codeclan.com.myfoodtracker.Enums.MealType;
+import example.codeclan.com.myfoodtracker.MyClasses.Day;
 import example.codeclan.com.myfoodtracker.MyClasses.Food;
+import example.codeclan.com.myfoodtracker.MyClasses.FoodPlan;
 
 import static junit.framework.TestCase.assertEquals;
 
@@ -13,23 +16,33 @@ import static junit.framework.TestCase.assertEquals;
 
 public class TestFood {
 
+
+    FoodPlan foodPlan;
+    Day day1;
     Food food;
+
 
     @Before
     public void before(){
-//        Should the Breakfast, Lunch, Dinner and Snacks be Enums?
-        food = new Food("Salad", 300);
-    }
+            food = new Food("Eggs", 50 );
+            day1 = new Day();
+            foodPlan = new FoodPlan();
+            day1.addFoodToDay(MealType.LUNCH, food);
+            food = new Food("Toast", 50 );
+            day1.addFoodToDay(MealType.LUNCH, food);
+            foodPlan.addMealDay("Apr 24, 2017", day1);
+        }
+
 
 
     @Test
     public void testCanGetFood() {
-        assertEquals("Salad", food.getFood());
+        assertEquals("Toast", food.getFood());
     }
 
     @Test
     public void testCanGetCalories(){
-        assertEquals(300, food.getCalories());
+        assertEquals(50, food.getCalories());
     }
 
 //    @Test

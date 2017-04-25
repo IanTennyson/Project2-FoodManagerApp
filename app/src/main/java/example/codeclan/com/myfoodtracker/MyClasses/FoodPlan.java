@@ -33,6 +33,10 @@ public class FoodPlan implements Serializable {
         mealPlan.put(date, day);
     }
 
+    public String getDate(){
+        return mealPlan.entrySet().toString();
+    }
+
     }
 
 

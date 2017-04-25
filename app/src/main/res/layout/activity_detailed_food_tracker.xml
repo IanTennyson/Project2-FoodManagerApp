@@ -13,8 +13,10 @@
 
 
     <LinearLayout
-        android:layout_width="100dp"
-        android:layout_height="120dp"
+        android:id="@+id/detailed_date"
+
+        android:layout_width="200dp"
+        android:layout_height="240dp"
         android:orientation="vertical"
         >
 
@@ -22,27 +24,109 @@
         android:id="@+id/month"
 
         android:gravity="center"
-        android:hint="MTH"
-        android:layout_width="100dp"
-        android:layout_height="35dp"
+        android:layout_width="200dp"
+        android:layout_height="70dp"
         android:textColor="#ffffff"
         android:background="#bf0101"
         android:layout_weight="0.72"
       />
 
     <TextView
-        android:id="@+id/day"
+        android:id="@+id/date"
 
         android:gravity="center"
         android:hint="NO"
-        android:layout_width="100dp"
-        android:layout_height="85dp"
+        android:layout_width="200dp"
+        android:layout_height="170dp"
         android:textColor="#000000"
         android:background="#ffffff"
 
         />
 
+
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/detailed_calories"
+
+        android:layout_width="500dp"
+        android:layout_height="240dp"
+        android:layout_toRightOf="@+id/detailed_date"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+
+        <TextView
+            android:id="@+id/recomended_daily_calories"
+
+            android:hint="recomended_daily_calories"
+            android:gravity="center"
+            android:layout_width="400dp"
+            android:layout_height="80dp"
+            />
+        <TextView
+            android:id="@+id/consumed_daily_calories"
+
+            android:hint="consumed_daily_calories"
+            android:gravity="center"
+            android:layout_width="400dp"
+            android:layout_height="80dp"
+            />
+
+        <TextView
+            android:id="@+id/remaining_daily_calories"
+
+            android:hint="remaining_daily_calories"
+            android:gravity="center"
+            android:layout_width="400dp"
+            android:layout_height="80dp"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/gap_one"
+
+        android:layout_below="@id/detailed_date"
+        android:layout_width="700dp"
+        android:layout_height="50dp" />
+
+    <ImageView
+        android:id="@+id/journal_image"
+
+        android:layout_width="200dp"
+        android:layout_height="240dp"
+        android:layout_below="@+id/gap_one"
+        />
+
+
+    <EditText
+        android:id="@+id/enter_journal"
+
+        android:gravity="center"
+        android:textSize="40dp"
+        android:hint="ENTER A SHORT DESCRIPTION OF YOUR DAY"
+        android:layout_width="500dp"
+        android:layout_height="240dp"
+        android:layout_below="@+id/gap_one"
+        android:layout_toRightOf="@+id/journal_image"
+        />
+
+    <TextView
+        android:id="@+id/gap_two"
+
+        android:layout_below="@id/journal_image"
+        android:layout_width="700dp"
+        android:layout_height="50dp" />
+
+    <ListView
+        android:id="@+id/detailed_meal_tracker"
+        android:layout_below="@+id/gap_two"
+
+        android:layout_width="700dp"
+        android:layout_height="wrap_content">
+
+    </ListView>
 
 
 

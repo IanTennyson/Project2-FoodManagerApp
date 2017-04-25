@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -45,7 +46,10 @@ public class EatActivity extends FragmentActivity {
         setContentView(R.layout.activity_eat);
         Intent intent = getIntent();
 
-        day = (TextView) findViewById(R.id.day);
+        //STOP THE KEYBOARD FROM POPPING UP WHEN THE PAGE LOADS
+        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+
+        day = (TextView) findViewById(R.id.date);
         Spinner mySpinner = (Spinner) findViewById(R.id.meal);
         food = (EditText) findViewById(R.id.food);
         cal = (EditText) findViewById(R.id.calories_entered);

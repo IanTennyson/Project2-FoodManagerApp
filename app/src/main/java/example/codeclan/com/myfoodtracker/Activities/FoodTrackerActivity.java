@@ -38,7 +38,6 @@ public class FoodTrackerActivity extends AppCompatActivity {
         ListView listView = (ListView) findViewById(R.id.food_tracker);
         listView.setAdapter(foodTrackerAdapter);
 
-
     }
 
     public void getDetailedFood(View listItem){
