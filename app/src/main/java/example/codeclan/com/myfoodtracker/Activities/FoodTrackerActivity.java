@@ -8,7 +8,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-import example.codeclan.com.myfoodtracker.FoodTrackerAdapter;
+import example.codeclan.com.myfoodtracker.Adapters.FoodTrackerAdapter;
 import example.codeclan.com.myfoodtracker.MyClasses.FoodPlan;
 import example.codeclan.com.myfoodtracker.R;
 import example.codeclan.com.myfoodtracker.SharedPreferencesManager;
@@ -47,9 +47,9 @@ public class FoodTrackerActivity extends AppCompatActivity {
 //        Intent intent = new Intent(this, DetailedFoodTrackerActivity.class);
 //        intent.putExtra("day", food);
 
-        FoodPlan foodPlan = (FoodPlan) listItem.getTag();
+        String foodPlanDay = (String) listItem.getTag();
         Intent intent = new Intent(this, DetailedFoodTrackerActivity.class);
-        intent.putExtra("day", foodPlan);
+        intent.putExtra("day", foodPlanDay);
 
         startActivity(intent);
 

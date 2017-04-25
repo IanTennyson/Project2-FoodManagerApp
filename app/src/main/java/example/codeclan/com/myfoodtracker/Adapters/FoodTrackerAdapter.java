@@ -1,4 +1,4 @@
-package example.codeclan.com.myfoodtracker;
+package example.codeclan.com.myfoodtracker.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import java.util.ArrayList;
 import example.codeclan.com.myfoodtracker.MyClasses.FoodPlan;
+import example.codeclan.com.myfoodtracker.R;
 
 //The job of an adapter is primarily to make an object work in a situation where a different interface is expected.
 
