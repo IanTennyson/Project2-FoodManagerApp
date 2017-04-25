@@ -16,7 +16,7 @@
         android:id="@+id/detailed_date"
 
         android:layout_width="200dp"
-        android:layout_height="240dp"
+        android:layout_height="200dp"
         android:orientation="vertical"
         >
 
@@ -25,10 +25,10 @@
 
         android:gravity="center"
         android:layout_width="200dp"
-        android:layout_height="70dp"
+        android:layout_height="50dp"
         android:textColor="#ffffff"
         android:background="#bf0101"
-        android:layout_weight="0.72"
+
       />
 
     <TextView
@@ -37,7 +37,7 @@
         android:gravity="center"
         android:hint="NO"
         android:layout_width="200dp"
-        android:layout_height="170dp"
+        android:layout_height="150dp"
         android:textColor="#000000"
         android:background="#ffffff"
 
@@ -50,7 +50,7 @@
         android:id="@+id/detailed_calories"
 
         android:layout_width="500dp"
-        android:layout_height="240dp"
+        android:layout_height="200dp"
         android:layout_toRightOf="@+id/detailed_date"
         android:orientation="vertical"
         android:gravity="center"
@@ -62,7 +62,7 @@
             android:hint="recomended_daily_calories"
             android:gravity="center"
             android:layout_width="400dp"
-            android:layout_height="80dp"
+            android:layout_height="100dp"
             />
         <TextView
             android:id="@+id/consumed_daily_calories"
@@ -70,32 +70,27 @@
             android:hint="consumed_daily_calories"
             android:gravity="center"
             android:layout_width="400dp"
-            android:layout_height="80dp"
+            android:layout_height="100dp"
             />
 
-        <TextView
-            android:id="@+id/remaining_daily_calories"
-
-            android:hint="remaining_daily_calories"
-            android:gravity="center"
-            android:layout_width="400dp"
-            android:layout_height="80dp"
-            />
 
     </LinearLayout>
 
     <TextView
         android:id="@+id/gap_one"
-
-        android:layout_below="@id/detailed_date"
+        android:text="gap one"
+        android:visibility="invisible"
         android:layout_width="700dp"
-        android:layout_height="50dp" />
+        android:layout_height="50dp"
+        android:layout_below="@id/detailed_date"
+        />
+
 
     <ImageView
         android:id="@+id/journal_image"
 
         android:layout_width="200dp"
-        android:layout_height="240dp"
+        android:layout_height="200dp"
         android:layout_below="@+id/gap_one"
         />
 
@@ -107,17 +102,17 @@
         android:textSize="40dp"
         android:hint="Journal Entry"
         android:layout_width="500dp"
-        android:layout_height="240dp"
+        android:layout_height="200dp"
         android:layout_below="@+id/gap_one"
         android:layout_toRightOf="@+id/journal_image"
         />
 
     <TextView
         android:id="@+id/gap_two"
-
         android:layout_below="@id/journal_image"
         android:layout_width="700dp"
-        android:layout_height="50dp" />
+        android:layout_height="50dp"
+        />
 
     <ListView
         android:id="@+id/detailed_meal_tracker"

@@ -7,54 +7,41 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+import example.codeclan.com.myfoodtracker.Enums.MealType;
+
 /**
  * Created by user on 20/04/2017.
  */
 
 public class Food implements Serializable {
-//    private String date;
-////  private String day;
-//    private String journal;
-//    private MealType meal;
     private String food;
-    private int calories;
+    private Integer calories;
 
-    public Food (String food, int calories){
-//        this.date = date;
-////        this.day = day;
-//        this.journal = journal;
-//        this.meal = meal;
+    public Food (String food, Integer calories){
         this.food = food;
         this.calories = calories;
     }
-
 
     public String getFood(){
         return this.food;
     }
 
-    public int getCalories(){
+    public Integer getCalories(){
         return this.calories;
     }
 
 
-
-
-//    public String getDate(){
-//        return this.date;
-//    }
-
-//    public String getDay(){
-//        return this.day;
-//    }
-
-//    public String getJournal(){
-//        return this.journal;
+//    public ArrayList<Integer> getMyCalories(){
+//        return new ArrayList<Integer>(MealType.valueOf(Food.getCalories()));
 //    }
 //
-//    public MealType getMeal(){
-//        return this.meal;
+//    public ArrayList<String> getMyFoods(){
+//        return new ArrayList<String>(MealType.valueOf(MealType.values().getFood()));
 //    }
+
+//    public ArrayList<String> getDates() {
+//        return new ArrayList<String>( mealPlan.keySet()) ;
+////    }
 
 
 

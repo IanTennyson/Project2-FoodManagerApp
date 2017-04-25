@@ -23,9 +23,11 @@ public class DetailedFoodAdapter extends ArrayAdapter{
         super(context, 0, mealTypes);
     }
 
-    public DetailedFoodAdapter(Context context, Food food){
-        super(context, 0, food);
-    }
+//    public DetailedFoodAdapter(Context context, ArrayList<Food> food){
+//        super(context, 0, food);
+//    }
+
+
 
     @Override
 
@@ -41,8 +43,8 @@ public class DetailedFoodAdapter extends ArrayAdapter{
         TextView mealImage = (TextView) listItemView.findViewById(R.id.meal_image);
         mealImage.setText(meal);
 
-        TextView foodInfo = (TextView) listItemView.findViewById(R.id.food);
-        foodInfo.setText();
+//        TextView foodInfo = (TextView) listItemView.findViewById(R.id.food);
+//        foodInfo.setText();
 
 //        TextView date = (TextView) listItemView.findViewById(R.id.date);
 //        date.setText(currentDate);

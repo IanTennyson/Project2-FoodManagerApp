@@ -40,9 +40,11 @@ public class TestFood {
         assertEquals("Toast", food.getFood());
     }
 
+
+
     @Test
-    public void testCanGetCalories(){
-        assertEquals(50, food.getCalories());
+    public void testCanReturnAllFoods(){
+
     }
 
 //    @Test

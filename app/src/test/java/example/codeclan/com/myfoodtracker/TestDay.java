@@ -2,6 +2,10 @@ package example.codeclan.com.myfoodtracker;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+
 import example.codeclan.com.myfoodtracker.Enums.MealType;
 import example.codeclan.com.myfoodtracker.MyClasses.Day;
 import example.codeclan.com.myfoodtracker.MyClasses.Food;
@@ -47,5 +51,6 @@ public class TestDay {
 
         assertNull(day.getFoodDay().get(MealType.SNACK));
     }
+
 
 }

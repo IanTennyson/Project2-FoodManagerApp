@@ -11,16 +11,19 @@
     android:background="#FF8C00"
     tools:context="example.codeclan.com.myfoodtracker.Activities.EatActivity">
 
-    <Button
-        android:id="@+id/submit_new_food"
+    <TextView
+        android:id="@+id/chosen_date"
 
-        android:onClick="onEatButtonClicked"
-        android:text="EAT"
+        android:hint="current date text"
+        android:textSize="30dp"
+        android:inputType="textCapCharacters"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:layout_alignParentTop="true"
+        android:layout_below="@+id/meal"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="28dp"
+        android:layout_marginTop="50dp"
         />
 
 
@@ -32,23 +35,43 @@
         android:hint="HOW MANY CALORIES WAS IT?"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="0dp"
         android:layout_below="@+id/food"
-        android:layout_centerHorizontal="true"
-        />
+        android:layout_centerHorizontal="true" />
 
-    <TextView
-        android:id="@+id/chosen_date"
 
-        android:inputType="textCapCharacters"
-        android:hint="23 APR 2017"
+    <Button
+        android:id="@+id/date_button"
+
+        android:onClick="setDate"
+        android:text="Set Date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true" />
 
-        android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/date_button"
-        android:layout_alignStart="@+id/date_button"
-        android:layout_marginTop="30dp" />
+    <ImageView
+        android:id="@+id/submit_new_food"
+
+        android:onClick="onEatButtonClicked"
+        android:src="@drawable/app_logo_copy"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+
+        android:layout_below="@+id/calories_entered"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="103dp" />
+
+    <Spinner
+        android:id="@+id/meal"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:layout_below="@+id/date_button"
+        android:layout_centerHorizontal="true">
+
+    </Spinner>
 
     <EditText
         android:id="@+id/food"
@@ -58,38 +81,9 @@
         android:hint="WHAT DID YOU EAT?"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/date_button"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="77dp" />
-
-
-
-    <Button
-        android:id="@+id/date_button"
-
-        android:onClick="setDate"
-
-        android:text="Set Date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:layout_marginTop="41dp"
-        android:layout_below="@+id/chosen_date"
-        android:layout_alignLeft="@+id/submit_new_food"
-        android:layout_alignStart="@+id/submit_new_food" />
-
-    <Spinner
-        android:id="@+id/meal"
-
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:layout_below="@+id/date_button"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp">
-
-    </Spinner>
+        android:layout_marginTop="61dp"
+        android:layout_below="@+id/meal"
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>

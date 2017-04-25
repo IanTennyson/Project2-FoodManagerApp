@@ -31,6 +31,9 @@ public class Day implements Serializable{
         }
     }
 
+
+
+
     public HashMap<MealType, ArrayList<Food>> getFoodDay() {
         return foodDay;
     }

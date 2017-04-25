@@ -9,6 +9,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 
 
 import example.codeclan.com.myfoodtracker.Adapters.DetailedFoodAdapter;
@@ -38,12 +40,22 @@ public class DetailedFoodTrackerActivity extends AppCompatActivity {
         TextView textView = (TextView) findViewById(R.id.date);
         textView.setText(date);
 
+
         MealType[] meals = MealType.values();
         DetailedFoodAdapter detailedFoodAdapter = new DetailedFoodAdapter(this, meals);
+
+
 
         ListView listView = (ListView) findViewById(R.id.detailed_meal_tracker);
         listView.setAdapter(detailedFoodAdapter);
 
+//        ArrayList<String> dates = foodPlan.getDates();
+//        FoodTrackerAdapter foodTrackerAdapter = new FoodTrackerAdapter(this, dates);
+//
+//        ListView listView = (ListView) findViewById(R.id.food_tracker);
+//        listView.setAdapter(foodTrackerAdapter);
+
+//        ArrayList<String> foods =
 
 
     }
