@@ -1,4 +1,4 @@
-package example.codeclan.com.myfoodtracker;
+package example.codeclan.com.myfoodtracker.Activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +8,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+
+import example.codeclan.com.myfoodtracker.R;
 
 public class DetailedFoodTrackerActivity extends AppCompatActivity {
 

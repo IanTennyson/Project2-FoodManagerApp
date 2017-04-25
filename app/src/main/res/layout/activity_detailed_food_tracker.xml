@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="#FF8C00"
-    tools:context="example.codeclan.com.myfoodtracker.DetailedFoodTrackerActivity">
+    tools:context="example.codeclan.com.myfoodtracker.Activities.DetailedFoodTrackerActivity">
 
 
     <LinearLayout

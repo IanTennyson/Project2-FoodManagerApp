@@ -1,10 +1,9 @@
-package example.codeclan.com.myfoodtracker;
+package example.codeclan.com.myfoodtracker.Calendar;
 
 import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
-import android.support.v4.app.FragmentActivity;
 
 import java.util.Calendar;
 

@@ -1,4 +1,4 @@
-package example.codeclan.com.myfoodtracker;
+package example.codeclan.com.myfoodtracker.Enums;
 
 /**
  * Created by user on 22/04/2017.

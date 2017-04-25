@@ -1,23 +1,23 @@
 package example.codeclan.com.myfoodtracker;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.TextView;
-
 import java.util.ArrayList;
+import example.codeclan.com.myfoodtracker.MyClasses.FoodPlan;
+
+//The job of an adapter is primarily to make an object work in a situation where a different interface is expected.
 
 /**
  * Created by user on 20/04/2017.
  */
 
-public class FoodTrackerAdapter extends ArrayAdapter<FoodPlan> {
+public class FoodTrackerAdapter extends ArrayAdapter<String> {
 
-    public FoodTrackerAdapter(Context context, ArrayList<FoodPlan> foodPlan){
+    public FoodTrackerAdapter(Context context, ArrayList<String> foodPlan){
         super(context, 0, foodPlan);
     }
 
@@ -31,10 +31,10 @@ public class FoodTrackerAdapter extends ArrayAdapter<FoodPlan> {
             listItemView = LayoutInflater.from(getContext()).inflate(R.layout.food_items, parent, false);
         }
 
-        FoodPlan currentFood = getItem(position);
+        String currentDate = getItem(position);
 
         TextView date = (TextView) listItemView.findViewById(R.id.date);
-        date.setText(currentFood.getFoodDate().toString());
+        date.setText(currentDate);
 
 //        TextView month = (TextView) listItemView.findViewById(R.id.date);
 //        month.setText(currentFood.getDate());
@@ -49,7 +49,7 @@ public class FoodTrackerAdapter extends ArrayAdapter<FoodPlan> {
 //        TextView calories = (TextView) listItemView.findViewById(R.id.calories);
 //        calories.setText(currentFood.getCalories());
 
-        listItemView.setTag(currentFood);
+        listItemView.setTag(currentDate);
 
         return listItemView;
 

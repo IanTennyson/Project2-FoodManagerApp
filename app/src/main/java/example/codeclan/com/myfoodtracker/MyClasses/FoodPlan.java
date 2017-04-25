@@ -1,8 +1,10 @@
-package example.codeclan.com.myfoodtracker;
+package example.codeclan.com.myfoodtracker.MyClasses;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import example.codeclan.com.myfoodtracker.MyClasses.Day;
 
 /**
  * Created by user on 24/04/2017.
@@ -19,20 +21,16 @@ public class FoodPlan implements Serializable {
         mealPlan.put(date, day);
     }
 
+    public ArrayList<String> getDates() {
+        return new ArrayList<String>( mealPlan.keySet()) ;
+    }
+
     public Day getFoodOnDate(String date) {
         return mealPlan.get(date);
     }
 
-    public HashMap<String, Day> getFoodPlan(){
-        return mealPlan;
-    }
-
     public void addDayToFoodPlan(String date, Day day){
         mealPlan.put(date, day);
-    }
-
-    public Day getFoodDate(String date) {
-        return mealPlan.get(date);
     }
 
     }

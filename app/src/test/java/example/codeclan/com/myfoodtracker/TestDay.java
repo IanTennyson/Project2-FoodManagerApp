@@ -2,6 +2,10 @@ package example.codeclan.com.myfoodtracker;
 
 import org.junit.Test;
 
+import example.codeclan.com.myfoodtracker.Enums.MealType;
+import example.codeclan.com.myfoodtracker.MyClasses.Day;
+import example.codeclan.com.myfoodtracker.MyClasses.Food;
+
 import static junit.framework.Assert.assertNotNull;
 import static junit.framework.Assert.assertNull;
 import static junit.framework.TestCase.assertEquals;
@@ -24,10 +28,12 @@ public class TestDay {
     @Test
     public void testAddMealHasLengthThree() {
         Day day = new Day();
+        day.addFoodToDay(MealType.BREAKFAST, new Food("Grapefruit", 100));
+        day.addFoodToDay(MealType.BREAKFAST, new Food("Smoothie", 400));
+
         day.addFoodToDay(MealType.LUNCH, new Food("eggs", 5));
         day.addFoodToDay(MealType.LUNCH, new Food("cake", 5));
         day.addFoodToDay(MealType.LUNCH, new Food("sandwich", 5));
-
 
         day.addFoodToDay(MealType.DINNER, new Food("sandwich", 500));
 
@@ -41,4 +47,5 @@ public class TestDay {
 
         assertNull(day.getFoodDay().get(MealType.SNACK));
     }
+
 }

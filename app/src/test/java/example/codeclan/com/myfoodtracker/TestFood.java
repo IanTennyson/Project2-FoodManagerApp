@@ -3,7 +3,7 @@ package example.codeclan.com.myfoodtracker;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.Date;
+import example.codeclan.com.myfoodtracker.MyClasses.Food;
 
 import static junit.framework.TestCase.assertEquals;
 

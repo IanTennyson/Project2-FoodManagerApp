@@ -1,4 +1,4 @@
-package example.codeclan.com.myfoodtracker;
+package example.codeclan.com.myfoodtracker.Activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+
+import example.codeclan.com.myfoodtracker.R;
 
 public class NavigationActivity extends AppCompatActivity {
 

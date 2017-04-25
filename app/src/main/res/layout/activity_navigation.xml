@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="#FF8C00"
-    tools:context="example.codeclan.com.myfoodtracker.NavigationActivity">
+    tools:context="example.codeclan.com.myfoodtracker.Activities.NavigationActivity">
 
     <TextView
         android:id="@+id/display_user_name"

@@ -1,14 +1,10 @@
-package example.codeclan.com.myfoodtracker;
+package example.codeclan.com.myfoodtracker.Activities;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -17,12 +13,16 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
 import java.text.DateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
+
+import example.codeclan.com.myfoodtracker.Calendar.DatePickerDialog;
+import example.codeclan.com.myfoodtracker.Enums.MealType;
+import example.codeclan.com.myfoodtracker.MyClasses.Day;
+import example.codeclan.com.myfoodtracker.MyClasses.Food;
+import example.codeclan.com.myfoodtracker.MyClasses.FoodPlan;
+import example.codeclan.com.myfoodtracker.R;
+import example.codeclan.com.myfoodtracker.SharedPreferencesManager;
 
 public class EatActivity extends FragmentActivity {
 
@@ -72,6 +72,8 @@ public class EatActivity extends FragmentActivity {
     private void updateDate(){
         new android.app.DatePickerDialog(this, d, date.get(Calendar.YEAR), date.get(Calendar.MONTH), date.get(Calendar.DAY_OF_MONTH)).show();
     }
+
+
     android.app.DatePickerDialog.OnDateSetListener d = new android.app.DatePickerDialog.OnDateSetListener() {
         @Override
         public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
@@ -102,24 +104,13 @@ public class EatActivity extends FragmentActivity {
         String userChosenDate = chosenDate.getText().toString();
         Log.d(" Date user chose: ", userChosenDate);
 
-        //FOODPLAN CLASS SHARED PREFERENCE MANAGER
-//        ArrayList<FoodPlan> foodPlanList = SharedPreferencesManager.getFoodPlanList(this);
-//        foodPlanList.add(new FoodPlan(userChosenDate));
-//        SharedPreferencesManager.setFoodPlanList(this, foodPlanList);
-
-
 //      DAY CLASS INFORMATION!
 
         //ENUM MEAL TYPE SPINNER
         Spinner mySpinner = (Spinner) findViewById(R.id.meal);
         String mealSelected = mySpinner.getSelectedItem().toString();
         MealType mealEntered = MealType.valueOf(mealSelected);
-
-        //DAY CLASS SHARED PREFERENCE MANAGER
-//        ArrayList<Day> dayList = SharedPreferencesManager.getDayList(this);
-//        dayList.add(new Day(mealEntered));
-//        SharedPreferencesManager.setDayList(this, dayList);
-//
+        Log.d("MealType User Chose: ", mealSelected);
 
 //      FOOD CLASS INFORMATION!
 
@@ -144,7 +135,7 @@ public class EatActivity extends FragmentActivity {
 
 
         FoodPlan existingFoodPlan = SharedPreferencesManager.getFoodPlan(this);
-        Day existingDay = existingFoodPlan.getFoodDate(userChosenDate);
+        Day existingDay = existingFoodPlan.getFoodOnDate(userChosenDate);
 
         if(existingDay == null) {
             existingDay = new Day();

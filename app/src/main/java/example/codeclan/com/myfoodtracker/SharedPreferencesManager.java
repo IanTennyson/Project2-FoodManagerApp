@@ -5,9 +5,8 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
-import java.util.ArrayList;
+import example.codeclan.com.myfoodtracker.MyClasses.FoodPlan;
 
 /**
  * Created by user on 21/04/2017.
@@ -49,10 +48,11 @@ public class SharedPreferencesManager {
 
     public static FoodPlan getFoodPlan(Context context) {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-        String jsonString = sharedPreferences.getString("FoodPlan", new FoodPlan().toString());
-
         Gson gson = new Gson();
+
+        String jsonString = sharedPreferences.getString("FoodPlan", gson.toJson(new FoodPlan()));
         FoodPlan foodPlan = gson.fromJson(jsonString, FoodPlan.class);
+
         return foodPlan;
     }
 }

@@ -1,4 +1,4 @@
-package example.codeclan.com.myfoodtracker;
+package example.codeclan.com.myfoodtracker.MyClasses;
 
 import android.support.annotation.NonNull;
 

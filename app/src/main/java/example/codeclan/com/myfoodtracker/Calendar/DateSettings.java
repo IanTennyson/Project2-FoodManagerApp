@@ -1,4 +1,4 @@
-package example.codeclan.com.myfoodtracker;
+package example.codeclan.com.myfoodtracker.Calendar;
 
 import android.app.*;
 import android.app.DatePickerDialog;

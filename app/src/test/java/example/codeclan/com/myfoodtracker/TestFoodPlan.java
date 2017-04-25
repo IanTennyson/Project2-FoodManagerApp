@@ -5,7 +5,10 @@ import com.google.gson.Gson;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.HashMap;
+import example.codeclan.com.myfoodtracker.Enums.MealType;
+import example.codeclan.com.myfoodtracker.MyClasses.Day;
+import example.codeclan.com.myfoodtracker.MyClasses.Food;
+import example.codeclan.com.myfoodtracker.MyClasses.FoodPlan;
 
 import static junit.framework.Assert.assertNotNull;
 import static junit.framework.TestCase.assertEquals;
@@ -42,9 +45,5 @@ public class TestFoodPlan {
 
     }
 
-    @Test
-    public void testGetFoodDate(){
-        assertEquals("Apr 24, 2017", foodPlan.getFoodDate());
-    }
 
 }

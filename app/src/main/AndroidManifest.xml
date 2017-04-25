@@ -8,18 +8,18 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LauncherActivity">
+        <activity android:name=".Activities.LauncherActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".NavigationActivity" />
-        <activity android:name=".FoodTrackerActivity" />
-        <activity android:name=".EatActivity" />
-        <activity android:name=".DetailedFoodTrackerActivity" />
-        <activity android:name=".DetailedMealTrackerActivity"></activity>
+        <activity android:name=".Activities.NavigationActivity" />
+        <activity android:name=".Activities.FoodTrackerActivity" />
+        <activity android:name=".Activities.EatActivity" />
+        <activity android:name=".Activities.DetailedFoodTrackerActivity" />
+        <activity android:name=".Activities.DetailedMealTrackerActivity"></activity>
     </application>
 
 </manifest>
