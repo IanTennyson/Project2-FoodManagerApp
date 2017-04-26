@@ -8,6 +8,7 @@ import example.codeclan.com.myfoodtracker.MyClasses.Day;
 import example.codeclan.com.myfoodtracker.MyClasses.Food;
 import example.codeclan.com.myfoodtracker.MyClasses.FoodPlan;
 
+import static junit.framework.Assert.assertNotNull;
 import static junit.framework.TestCase.assertEquals;
 
 /**
@@ -19,17 +20,18 @@ public class TestFood {
 
     FoodPlan foodPlan;
     Day day1;
-    Food food;
+    Food food1;
+    Food food2;
 
 
     @Before
     public void before(){
-            food = new Food("Eggs", 50 );
+            food1 = new Food("Eggs", 50 );
             day1 = new Day();
             foodPlan = new FoodPlan();
-            day1.addFoodToDay(MealType.LUNCH, food);
-            food = new Food("Toast", 50 );
-            day1.addFoodToDay(MealType.LUNCH, food);
+            day1.addFoodToDay(MealType.LUNCH, food1);
+            food2 = new Food("Toast", 100 );
+            day1.addFoodToDay(MealType.LUNCH, food2);
             foodPlan.addMealDay("Apr 24, 2017", day1);
         }
 
@@ -37,7 +39,7 @@ public class TestFood {
 
     @Test
     public void testCanGetFood() {
-        assertEquals("Toast", food.getFood());
+        assertEquals("Toast", food2.getFood());
     }
 
 
@@ -46,6 +48,14 @@ public class TestFood {
     public void testCanReturnAllFoods(){
 
     }
+
+    @Test
+    public void testGetCalories(){
+        assertEquals("50", food1.getCalories().toString());
+    }
+
+
+
 
 //    @Test
 //    public void testCanGetDay() {

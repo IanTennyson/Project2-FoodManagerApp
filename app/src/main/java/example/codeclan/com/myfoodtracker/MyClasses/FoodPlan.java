@@ -4,7 +4,10 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import example.codeclan.com.myfoodtracker.Enums.MealType;
 import example.codeclan.com.myfoodtracker.MyClasses.Day;
+
+import static example.codeclan.com.myfoodtracker.R.id.food;
 
 /**
  * Created by user on 24/04/2017.
@@ -36,6 +39,26 @@ public class FoodPlan implements Serializable {
     public String getDate(){
         return mealPlan.entrySet().toString();
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+//    public int totalCal(){
+//        int sum = 0;
+//        for (int i = 0; i < food.getCalories(); i++){
+//        }
+//        return sum;
+//    }
 
     }
 

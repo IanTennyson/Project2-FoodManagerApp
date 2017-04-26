@@ -7,6 +7,9 @@ import java.util.HashMap;
 import example.codeclan.com.myfoodtracker.Enums.MealType;
 import example.codeclan.com.myfoodtracker.MyClasses.Food;
 
+import static example.codeclan.com.myfoodtracker.R.id.calories;
+import static example.codeclan.com.myfoodtracker.R.id.food;
+
 /**
  * Created by user on 24/04/2017.
  */
@@ -31,12 +34,32 @@ public class Day implements Serializable{
         }
     }
 
-
-
-
     public HashMap<MealType, ArrayList<Food>> getFoodDay() {
         return foodDay;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+//    public int totalCal(){
+//        int sum = 0;
+//        for (int i = 0; i < food.getCalories(); i++){
+//        }
+//        return sum;
+//    }
 }
 
 

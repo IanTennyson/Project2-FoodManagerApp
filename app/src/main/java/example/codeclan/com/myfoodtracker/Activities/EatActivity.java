@@ -95,7 +95,7 @@ public class EatActivity extends FragmentActivity {
 
     public void onEatButtonClicked(View view){
 
-        Toast.makeText(EatActivity.this, "Added to Log!", Toast.LENGTH_LONG).show();
+
 
         Log.d(getClass().toString(), "onEatButtonClicked");
         Intent i = new Intent(EatActivity.this, NavigationActivity.class);
@@ -119,13 +119,57 @@ public class EatActivity extends FragmentActivity {
 //      FOOD CLASS INFORMATION!
 
         //STRING FOOD USER ENTERED
+
+
         String foodUserEntered = food.getText().toString();
         Log.d(getClass().toString(), foodUserEntered);
 
+
+        if(foodUserEntered.equals("")){
+            food.setError("Please enter a food");
+//            Toast.makeText(EatActivity.this, "Please enter a food", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+
+
+
+        //SLACK CODE FOR REQUIRED FIELD
+//        if( userName.getText().toString().trim().equals("")){
+//
+//            /**
+//             *   You can Toast a message here that the Username is Empty
+//             **/
+//
+//            userName.setError( "First name is required!" );
+//
+//        }else{
+//            Intent i = new Intent(getApplicationContext(), Login.class);
+//            startActivity(i);
+//        }
+
+
+
+
+
+
+
+
         //INT CALORIES USER ENTERED
         String caloriesEntered = cal.getText().toString();
+        if(caloriesEntered.equals("")){
+            cal.setError("Please enter the number of calories");
+//            Toast.makeText(EatActivity.this, "Please enter the number of calories", Toast.LENGTH_SHORT).show();
+            return;
+        }
         int caloriesUserEntered = Integer.parseInt(caloriesEntered);
         Log.d("calories user entered: ", caloriesEntered);
+
+
+
+
+
+
 
         //SHARED PREFERENCE MANAGER
         //ArrayList<FoodPlan> foodList = SharedPreferencesManager.getFoodPlan(this);
@@ -158,7 +202,7 @@ public class EatActivity extends FragmentActivity {
 
 //             foodList.add(new FoodPlan(userChosenDate, mealEntered, foodUserEntered, caloriesUserEntered));
 
-
+        Toast.makeText(EatActivity.this, "Added to Log!", Toast.LENGTH_LONG).show();
 //        END
         startActivity(i);
 
