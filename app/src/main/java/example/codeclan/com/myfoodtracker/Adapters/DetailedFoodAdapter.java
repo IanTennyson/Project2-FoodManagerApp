@@ -19,13 +19,13 @@ import example.codeclan.com.myfoodtracker.R;
 
 public class DetailedFoodAdapter extends ArrayAdapter{
 
-    public DetailedFoodAdapter(Context context, MealType[] mealTypes){
-        super(context, 0, mealTypes);
-    }
-
-//    public DetailedFoodAdapter(Context context, ArrayList<Food> food){
-//        super(context, 0, food);
+//    public DetailedFoodAdapter(Context context, MealType[] mealTypes){
+//        super(context, 0, mealTypes);
 //    }
+
+    public DetailedFoodAdapter(Context context, ArrayList<Food> food){
+        super(context, 0, food);
+    }
 
 
 
@@ -35,13 +35,22 @@ public class DetailedFoodAdapter extends ArrayAdapter{
     public View getView(int position, View listItemView, ViewGroup parent){
 
         if (listItemView == null){
-            listItemView = LayoutInflater.from(getContext()).inflate(R.layout.activity_detailed_meal_tracker, parent, false);
+            listItemView = LayoutInflater.from(getContext()).inflate(R.layout.activity_breakfast, parent, false);
         }
 
-        String meal = getItem(position).toString();
+//        String meal = getItem(position).toString();
 
-        TextView mealImage = (TextView) listItemView.findViewById(R.id.meal_image);
-        mealImage.setText(meal);
+        Food food = (Food) getItem(position);
+
+        TextView foodText = (TextView) listItemView.findViewById(R.id.food);
+        foodText.setText(food.getFood());
+//
+        TextView caloriesText = (TextView) listItemView.findViewById(R.id.calories);
+        caloriesText.setText("Cal: " + food.getCalories());
+
+
+//        TextView mealImage = (TextView) listItemView.findViewById(R.id.meal_image);
+//        mealImage.setText(meal);
 
 //        TextView foodInfo = (TextView) listItemView.findViewById(R.id.food);
 //        foodInfo.setText();
@@ -50,7 +59,7 @@ public class DetailedFoodAdapter extends ArrayAdapter{
 //        date.setText(currentDate);
 
 
-        listItemView.setTag(meal);
+        listItemView.setTag(food);
 
         return listItemView;
 

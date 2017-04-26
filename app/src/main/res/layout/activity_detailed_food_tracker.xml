@@ -11,120 +11,133 @@
     android:background="#FF8C00"
     tools:context="example.codeclan.com.myfoodtracker.Activities.DetailedFoodTrackerActivity">
 
-
-    <LinearLayout
-        android:id="@+id/detailed_date"
-
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:orientation="vertical"
-        >
-
     <TextView
-        android:id="@+id/month"
+        android:id="@+id/gap"
 
+        android:text="BREAKFAST"
+        android:textColor="#fff"
+        android:textSize="15dp"
+        android:background="@android:color/background_dark"
         android:gravity="center"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:textColor="#ffffff"
-        android:background="#bf0101"
-
-      />
-
-    <TextView
-        android:id="@+id/date"
-
-        android:gravity="center"
-        android:hint="NO"
-        android:layout_width="200dp"
-        android:layout_height="150dp"
-        android:textColor="#000000"
-        android:background="#ffffff"
-
-        />
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/detailed_calories"
-
-        android:layout_width="500dp"
-        android:layout_height="200dp"
-        android:layout_toRightOf="@+id/detailed_date"
-        android:orientation="vertical"
-        android:gravity="center"
-        >
-
-        <TextView
-            android:id="@+id/recomended_daily_calories"
-
-            android:hint="recomended_daily_calories"
-            android:gravity="center"
-            android:layout_width="400dp"
-            android:layout_height="100dp"
-            />
-        <TextView
-            android:id="@+id/consumed_daily_calories"
-
-            android:hint="consumed_daily_calories"
-            android:gravity="center"
-            android:layout_width="400dp"
-            android:layout_height="100dp"
-            />
-
-
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/gap_one"
-        android:text="gap one"
-        android:visibility="invisible"
         android:layout_width="700dp"
-        android:layout_height="50dp"
-        android:layout_below="@id/detailed_date"
-        />
-
+        android:layout_height="20dp" />
 
     <ImageView
-        android:id="@+id/journal_image"
+        android:id="@+id/breakfast"
 
+        android:src="@drawable/breakfast_copy"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:layout_below="@+id/gap_one"
-        />
-
-
-    <EditText
-        android:id="@+id/enter_journal"
-
-        android:gravity="center"
-        android:textSize="40dp"
-        android:hint="Journal Entry"
-        android:layout_width="500dp"
-        android:layout_height="200dp"
-        android:layout_below="@+id/gap_one"
-        android:layout_toRightOf="@+id/journal_image"
-        />
-
-    <TextView
-        android:id="@+id/gap_two"
-        android:layout_below="@id/journal_image"
-        android:layout_width="700dp"
-        android:layout_height="50dp"
+        android:layout_below="@+id/gap"
         />
 
     <ListView
-        android:id="@+id/detailed_meal_tracker"
-        android:layout_below="@+id/gap_two"
+        android:id="@+id/breakfast_list"
 
-        android:layout_width="700dp"
-        android:layout_height="wrap_content">
+        android:layout_toRightOf="@id/breakfast"
+        android:layout_width="500dp"
+        android:layout_height="200dp"
+        android:layout_below="@+id/gap">
 
     </ListView>
 
+    <TextView
+        android:id="@+id/gap_one"
 
+        android:text="LUNCH"
+        android:textColor="#fff"
+        android:textSize="15dp"
+        android:background="@android:color/background_dark"
+        android:gravity="center"
+        android:layout_width="700dp"
+        android:layout_height="20dp"
+        android:layout_below="@id/breakfast"
+        />
 
+    <ImageView
+        android:id="@+id/lunch"
+
+        android:src="@drawable/lunch_copy"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_below="@id/gap_one"
+        />
+
+    <ListView
+        android:id="@+id/lunch_list"
+
+        android:layout_width="500dp"
+        android:layout_height="200dp"
+        android:layout_toRightOf="@id/lunch"
+        android:layout_below="@id/gap_one"
+        >
+
+    </ListView>
+
+    <TextView
+        android:id="@+id/gap_two"
+
+        android:text="DINNER"
+        android:textColor="#fff"
+        android:textSize="15dp"
+        android:background="@android:color/background_dark"
+        android:gravity="center"
+        android:layout_width="700dp"
+        android:layout_height="20dp"
+        android:layout_below="@+id/lunch"
+        />
+
+    <ImageView
+        android:id="@+id/dinner"
+
+        android:src="@drawable/dinner_copy"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_below="@+id/gap_two"
+        />
+
+    <ListView
+        android:id="@+id/dinner_list"
+
+        android:layout_width="500dp"
+        android:layout_height="200dp"
+        android:layout_toRightOf="@id/dinner"
+        android:layout_below="@id/gap_two"
+        >
+    </ListView>
+
+    <TextView
+        android:id="@+id/gap_three"
+
+        android:text="SNACK"
+        android:textColor="#fff"
+        android:textSize="15dp"
+        android:background="@android:color/background_dark"
+        android:gravity="center"
+        android:layout_width="700dp"
+        android:layout_height="20dp"
+        android:layout_below="@id/dinner"
+        />
+
+    <ImageView
+        android:id="@+id/snack"
+
+        android:src="@drawable/snack_copy"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_below="@id/gap_three"
+        />
+
+    <ListView
+        android:id="@+id/snack_list"
+
+        android:layout_width="500dp"
+        android:layout_height="200dp"
+        android:layout_toRightOf="@id/snack"
+        android:layout_below="@+id/gap_three"
+        >
+
+    </ListView>
 
 
 </RelativeLayout>

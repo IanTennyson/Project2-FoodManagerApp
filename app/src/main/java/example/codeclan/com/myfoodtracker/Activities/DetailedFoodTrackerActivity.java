@@ -31,23 +31,69 @@ public class DetailedFoodTrackerActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String date = intent.getExtras().getString("day");
 
-        //STOP THE KEYBOARD FROM POPPING UP WHEN THE PAGE LOADS
-        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+
+        ListView breakFast = (ListView) findViewById(R.id.breakfast_list);
+        ListView lunch = (ListView) findViewById(R.id.lunch_list);
+        ListView dinner = (ListView) findViewById(R.id.dinner_list);
+        ListView snack = (ListView) findViewById(R.id.snack_list);
+
+        Day day = SharedPreferencesManager.getFoodPlan(this).getFoodOnDate(date);
+
+        HashMap<MealType, ArrayList<Food>> foodPlan = day.getFoodDay();
+
+        ArrayList<Food> breakFastFood = foodPlan.get(MealType.BREAKFAST);
+        ArrayList<Food> lunchFood = foodPlan.get(MealType.LUNCH);
+        ArrayList<Food> dinnerFood = foodPlan.get(MealType.DINNER);
+        ArrayList<Food> snackFood = foodPlan.get(MealType.SNACK);
 
 
-        FoodPlan plan = SharedPreferencesManager.getFoodPlan(this);
+        if(breakFastFood == null) {
+            breakFastFood = new ArrayList<>();
+        }
 
-        TextView textView = (TextView) findViewById(R.id.date);
-        textView.setText(date);
+        if(lunchFood == null){
+            lunchFood = new ArrayList<>();
+        }
+
+        if(dinnerFood == null){
+            dinnerFood = new ArrayList<>();
+        }
+
+        if(snackFood == null){
+            snackFood = new ArrayList<>();
+        }
 
 
-        MealType[] meals = MealType.values();
-        DetailedFoodAdapter detailedFoodAdapter = new DetailedFoodAdapter(this, meals);
+
+
+        DetailedFoodAdapter breakfastAdapt = new DetailedFoodAdapter(this, breakFastFood);
+        DetailedFoodAdapter lunchAdapt = new DetailedFoodAdapter(this, lunchFood);
+        DetailedFoodAdapter dinnerAdapt = new DetailedFoodAdapter(this, dinnerFood);
+        DetailedFoodAdapter snackAdapt = new DetailedFoodAdapter(this, snackFood);
+
+        breakFast.setAdapter(breakfastAdapt);
+        lunch.setAdapter(lunchAdapt);
+        dinner.setAdapter(dinnerAdapt);
+        snack.setAdapter(snackAdapt);
 
 
 
-        ListView listView = (ListView) findViewById(R.id.detailed_meal_tracker);
-        listView.setAdapter(detailedFoodAdapter);
+
+
+//
+//        FoodPlan plan = SharedPreferencesManager.getFoodPlan(this);
+//
+//        TextView textView = (TextView) findViewById(R.id.date);
+//        textView.setText(date);
+
+//
+//        MealType[] meals = MealType.values();
+//        DetailedFoodAdapter detailedFoodAdapter = new DetailedFoodAdapter(this, meals);
+//
+
+
+//        ListView listView = (ListView) findViewById(R.id.detailed_meal_tracker);
+//        listView.setAdapter(detailedFoodAdapter);
 
 //        ArrayList<String> dates = foodPlan.getDates();
 //        FoodTrackerAdapter foodTrackerAdapter = new FoodTrackerAdapter(this, dates);
@@ -60,6 +106,8 @@ public class DetailedFoodTrackerActivity extends AppCompatActivity {
 
     }
 }
+
+
 
 
 

@@ -15,8 +15,6 @@
 
     <TextView
 
-
-
         android:layout_width="100dp"
         android:layout_height="35dp"
         android:textSize="30dp"
@@ -54,7 +52,7 @@
             android:id="@+id/journal"
 
             android:gravity="center"
-            android:hint="CLICK HERE TO ADD A JOURNAL ENTRY"
+            android:hint="LOG"
             android:textSize="25dp"
             android:layout_width="fill_parent"
             android:layout_height="70dp"

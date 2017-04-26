@@ -131,7 +131,14 @@ public class EatActivity extends FragmentActivity {
         //ArrayList<FoodPlan> foodList = SharedPreferencesManager.getFoodPlan(this);
 
         FoodPlan foodPlan = SharedPreferencesManager.getFoodPlan(this);
-        Day day = new Day();
+
+        Day day;
+
+        day = foodPlan.getFoodOnDate(userChosenDate);
+
+        if(day == null) {
+           day = new Day();
+        }
 
         day.addFoodToDay(mealEntered, new Food(foodUserEntered, caloriesUserEntered));
         foodPlan.addMealDay(userChosenDate, day);

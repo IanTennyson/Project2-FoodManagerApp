@@ -1,6 +1,7 @@
 package example.codeclan.com.myfoodtracker.Activities;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,6 +21,7 @@ public class NavigationActivity extends AppCompatActivity {
 
         userName = (TextView) findViewById(R.id.display_user_name);
 
+
         Intent intent = getIntent();
         String from = intent.getStringExtra("source");
         if ("eat".equals(from)){
@@ -30,7 +32,11 @@ public class NavigationActivity extends AppCompatActivity {
             String username = extra.getString("nameUserEntered");
             userName.setText("Welcome " + username);
         }
+
+
     }
+
+
 
 
 

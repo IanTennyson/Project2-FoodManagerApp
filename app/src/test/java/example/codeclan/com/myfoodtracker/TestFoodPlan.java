@@ -26,11 +26,13 @@ public class TestFoodPlan {
     @Before
     public void before() {
         food1 = new Food("Eggs", 50 );
+
         day1 = new Day();
         foodPlan = new FoodPlan();
         day1.addFoodToDay(MealType.LUNCH, food1);
         food1 = new Food("Toast", 50 );
         day1.addFoodToDay(MealType.LUNCH, food1);
+
         foodPlan.addMealDay("Apr 24, 2017", day1);
     }
 
