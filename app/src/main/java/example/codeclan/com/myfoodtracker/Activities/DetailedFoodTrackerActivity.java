@@ -46,7 +46,6 @@ public class DetailedFoodTrackerActivity extends AppCompatActivity {
         ArrayList<Food> dinnerFood = foodPlan.get(MealType.DINNER);
         ArrayList<Food> snackFood = foodPlan.get(MealType.SNACK);
 
-
         if(breakFastFood == null) {
             breakFastFood = new ArrayList<>();
         }
@@ -62,9 +61,6 @@ public class DetailedFoodTrackerActivity extends AppCompatActivity {
         if(snackFood == null){
             snackFood = new ArrayList<>();
         }
-
-
-
 
         DetailedFoodAdapter breakfastAdapt = new DetailedFoodAdapter(this, breakFastFood);
         DetailedFoodAdapter lunchAdapt = new DetailedFoodAdapter(this, lunchFood);

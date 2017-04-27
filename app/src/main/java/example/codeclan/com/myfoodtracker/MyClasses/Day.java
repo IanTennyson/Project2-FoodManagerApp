@@ -39,27 +39,6 @@ public class Day implements Serializable{
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//
-//    public int totalCal(){
-//        int sum = 0;
-//        for (int i = 0; i < food.getCalories(); i++){
-//        }
-//        return sum;
-//    }
 }
 
 

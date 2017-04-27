@@ -40,26 +40,6 @@ public class FoodPlan implements Serializable {
         return mealPlan.entrySet().toString();
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-//
-//    public int totalCal(){
-//        int sum = 0;
-//        for (int i = 0; i < food.getCalories(); i++){
-//        }
-//        return sum;
-//    }
-
     }
 
 

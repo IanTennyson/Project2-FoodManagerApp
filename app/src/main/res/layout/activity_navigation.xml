@@ -10,11 +10,13 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="#FF8C00"
+
     tools:context="example.codeclan.com.myfoodtracker.Activities.NavigationActivity">
 
     <TextView
         android:id="@+id/display_user_name"
 
+        android:visibility="invisible"
         android:hint="Guest User"
         android:textSize="30dp"
         android:layout_width="wrap_content"
@@ -51,5 +53,27 @@
         android:layout_toLeftOf="@+id/display_user_name"
         android:layout_toStartOf="@+id/display_user_name" />
 
+    <TextView
+        android:id="@+id/eat_text"
+        android:text="EAT"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+
+        android:layout_below="@+id/eat"
+        android:layout_alignLeft="@+id/eat"
+        android:layout_alignStart="@+id/eat" />
+
+    <TextView
+        android:text="LOG"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/day_planner"
+        android:layout_alignLeft="@+id/day_planner"
+        android:layout_alignStart="@+id/day_planner" />
 
 </RelativeLayout>

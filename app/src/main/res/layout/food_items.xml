@@ -11,8 +11,6 @@
         android:orientation="vertical">
 
 
-
-
     <TextView
 
         android:layout_width="100dp"
@@ -26,7 +24,6 @@
 
         <TextView
             android:id="@+id/date"
-
 
             android:layout_width="100dp"
             android:layout_height="85dp"
@@ -51,6 +48,7 @@
         <TextView
             android:id="@+id/journal"
 
+            android:visibility="invisible"
             android:gravity="center"
             android:hint="LOG"
             android:textSize="25dp"
@@ -60,6 +58,8 @@
 
         <TextView
             android:id="@+id/total_calories"
+
+            android:visibility="invisible"
             android:hint="DISPLAY TOTAL CALORIES"
             android:gravity="center"
             android:layout_width="fill_parent"

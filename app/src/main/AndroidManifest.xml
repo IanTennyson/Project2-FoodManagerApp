@@ -19,7 +19,7 @@
         <activity android:name=".Activities.FoodTrackerActivity" />
         <activity android:name=".Activities.EatActivity" />
         <activity android:name=".Activities.DetailedFoodTrackerActivity" />
-        <activity android:name=".Activities.DetailedMealTrackerActivity"></activity>
+
     </application>
 
 </manifest>
